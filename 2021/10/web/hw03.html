@@ -1,0 +1,625 @@
+<html>
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap" rel="stylesheet">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>C110156115 郭粟閣</title>
+    <meta charset="utf-8">
+    <style>
+        body {
+            background-image: url(https://previews.123rf.com/images/madamsaffa/madamsaffa1506/madamsaffa150600021/41670381-hand-drawn-black-and-white-doodle-background.jpg);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+        }
+h1,h2,h3,h4,h5,h6,p {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+        }
+        h2 {
+            padding-top: 10px;
+        }
+        .card {
+            max-width: 500px;
+            margin-right: auto;
+            margin-left: auto;
+            border-radius: 15px;
+            background-color: #fff;
+            box-shadow: 1px 1px 7px 0 rgb(58, 57, 57);
+            font-weight: 400;
+            text-align: center;
+        }
+
+        input[type="radio"] {
+            display: none;
+        }
+
+        #radio input:checked+.button {
+            background: #5e7380;
+            color: #fff;
+            cursor: default;
+        }
+
+        #radio .button {
+            display: inline-block;
+            margin: 0 5px 10px 0;
+            padding: 5px 10px;
+            background: #dfd3d3;
+            color: #333;
+            cursor: pointer;
+        }
+
+        #radio .button:hover {
+            background: #bbb;
+            color: #fff;
+        }
+
+        #radio .round {
+            border-radius: 5px;
+        }
+        .Suggestion{
+            width: 70%;
+        }
+        .small-card{
+            margin-top:10px;
+            border-radius: 5px;
+            border: 1px solid;
+            border-color: #c4c3c3;
+            max-width:375px;
+            text-align: center;
+            margin-right: auto;
+            margin-left: auto;
+        }
+        .big-quote{
+            color: #979797;
+            font-family: 'IM Fell English SC', serif;
+        }
+        .radio-out-container{
+            border-color: #c4c3c3;
+            max-width:180px;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            border: 0.5px solid;
+            border-radius: 5px;
+        }
+        .second-container{
+            margin-left: auto;
+            margin-right: auto;
+            text-align: left;
+            max-width: 300px;
+        }
+        .warn{
+            color:white;
+            background-color: red;
+            border-radius: 3px;
+            size: 20px;
+        }
+        .quote{
+            max-width:400px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: left;
+            border-left: 3px solid;
+            border-color: red;
+            border-radius:5px;
+        }
+        .card1,.card2,.card3,.card4,.card5,.card6{
+            padding: 10px;
+        }
+    </style>
+</head>
+<body class="bg">
+    <div class="container">
+        <div class="row">
+            <div class="card1">
+                <div class="card">
+                    <h2>用餐的滿意程度</h2>
+                    <tr>
+                        <td>
+                            <h3>整體</h3>
+                        </td>
+                        <td>
+                            <div id="radio">
+                                <label>
+                                    <input type="radio" name="整體" value="整體-非常滿意">
+                                    <p class="round button">非常滿意</p>
+                                </label>
+                                <label>
+                                    <input type="radio" name="整體" value="整體-滿意">
+                                    <p class="round button">滿意</p>
+                                </label>
+                                <label>
+                                    <input type="radio" name="整體" value="整體-普通">
+                                    <p class="round button">普普</p>
+                                </label>
+                                <label>
+                                    <input type="radio" name="整體" value="整體-不滿意">
+                                    <p class="round button">不滿</p>
+                                </label>
+                                <label>
+                                    <input type="radio" name="整體" value="整體-非常不滿意">
+                                    <p class="round button">超不滿意</p>
+                                </label>
+                            </div>
+                        </td>
+                        <td>
+                            <h3>環境</h3>
+                        </td>
+                        <td>
+                            <div id="radio">
+                                <label>
+                                    <input type="radio" name="環境" value="環境-非常滿意">
+                                    <p class="round button">非常滿意</p>
+                                </label>
+                                <label>
+                                    <input type="radio" name="環境" value="環境-滿意">
+                                    <p class="round button">滿意</p>
+                                </label>
+                                <label>
+                                    <input type="radio" name="環境" value="環境-普通">
+                                    <p class="round button">普普</p>
+                                </label>
+                                <label>
+                                    <input type="radio" name="環境" value="環境-不滿意">
+                                    <p class="round button">不滿</p>
+                                </label>
+                                <label>
+                                    <input type="radio" name="環境" value="環境-非常不滿意">
+                                    <p class="round button">超不滿意</p>
+                                </label>
+                            </div>
+                        </td>
+                        <td>
+                            <h3>服務</h3>
+                        </td>
+                        <td>
+                            <div id="radio">
+                                <label>
+                                    <input type="radio" name="服務" value="服務-非常滿意">
+                                    <p class="round button">非常滿意</p>
+                                </label>
+                                <label>
+                                    <input type="radio" name="服務" value="服務-滿意">
+                                    <p class="round button">滿意</p>
+                                </label>
+                                <label>
+                                    <input type="radio" name="服務" value="服務-普通">
+                                    <p class="round button">普普</p>
+                                </label>
+                                <label>
+                                    <input type="radio" name="服務" value="服務-不滿意">
+                                    <p class="round button">不滿</p>
+                                </label>
+                                <label>
+                                    <input type="radio" name="服務" value="服務-非常不滿意">
+                                    <p class="round button">超不滿意</p>
+                                </label>
+                            </div>
+                        </td>
+                        <td>
+                            <h3>餐點</h3>
+                        </td>
+                        <td>
+                            <div id="radio">
+                                <label>
+                                    <input type="radio" name="餐點" value="餐點-非常滿意">
+                                    <p class="round button">非常滿意</p>
+                                </label>
+                                <label>
+                                    <input type="radio" name="餐點" value="餐點-滿意">
+                                    <p class="round button">滿意</p>
+                                </label>
+                                <label>
+                                    <input type="radio" name="餐點" value="餐點-普通">
+                                    <p class="round button">普普</p>
+                                </label>
+                                <label>
+                                    <input type="radio" name="餐點" value="餐點-不滿意">
+                                    <p class="round button">不滿</p>
+                                </label>
+                                <label>
+                                    <input type="radio" name="餐點" value="餐點-非常不滿意">
+                                    <p class="round button">超不滿意</p>
+                                </label>
+                            </div>
+                        </td>
+                        <td>
+                            <h3>價位</h3>
+                        </td>
+                        <td>
+                            <div id="radio" style="padding-bottom: 5px;">
+                                <label>
+                                    <input type="radio" name="價位" value="價位-非常滿意">
+                                    <p class="round button">非常滿意</p>
+                                </label>
+                                <label>
+                                    <input type="radio" name="價位" value="價位-滿意">
+                                    <p class="round button">滿意</p>
+                                </label>
+                                <label>
+                                    <input type="radio" name="價位" value="價位-普通">
+                                    <p class="round button">普普</p>
+                                </label>
+                                <label>
+                                    <input type="radio" name="價位" value="價位-不滿意">
+                                    <p class="round button">不滿</p>
+                                </label>
+                                <label>
+                                    <input type="radio" name="價位" value="價位-非常不滿意">
+                                    <p class="round button">超不滿意</p>
+                                </label>
+                            </div>
+                        </td>
+                        <td>
+                            <img src="https://doodleipsum.com/700/abstract?i=cb0515299c600124805d923f3619c1ad"
+                                style="max-width:300px;" />
+                        </td>
+                    </tr>
+                </div>
+            </div>
+            <div class="card2">
+                <div class="card">
+                    <h2>各餐點的滿意程度</h2>
+                    <tr>
+                        <td>
+                            <h3>沙拉</h3>
+                        </td>
+                        <td>
+                            <div id="radio">
+                                <label>
+                                    <input type="radio" name="沙拉" value="沙拉-非常滿意">
+                                    <p class="round button">非常滿意</p>
+                                </label>
+                                <label>
+                                    <input type="radio" name="沙拉" value="沙拉-滿意">
+                                    <p class="round button">滿意</p>
+                                </label>
+                                <label>
+                                    <input type="radio" name="沙拉" value="沙拉-普通">
+                                    <p class="round button">普普</p>
+                                </label>
+                                <label>
+                                    <input type="radio" name="沙拉" value="沙拉-不滿意">
+                                    <p class="round button">不滿</p>
+                                </label>
+                                <label>
+                                    <input type="radio" name="沙拉" value="沙拉-非常不滿意">
+                                    <p class="round button">超不滿意</p>
+                                </label>
+                            </div>
+                        </td>
+                        <td>
+                            <h3>湯品</h3>
+                        </td>
+                        <td>
+                            <div id="radio">
+                                <label>
+                                    <input type="radio" name="湯品" value="湯品-非常滿意">
+                                    <p class="round button">非常滿意</p>
+                                </label>
+                                <label>
+                                    <input type="radio" name="湯品" value="湯品-滿意">
+                                    <p class="round button">滿意</p>
+                                </label>
+                                <label>
+                                    <input type="radio" name="湯品" value="湯品-普通">
+                                    <p class="round button">普普</p>
+                                </label>
+                                <label>
+                                    <input type="radio" name="湯品" value="湯品-不滿意">
+                                    <p class="round button">不滿</p>
+                                </label>
+                                <label>
+                                    <input type="radio" name="湯品" value="湯品-非常不滿意">
+                                    <p class="round button">超不滿意</p>
+                                </label>
+                            </div>
+                        </td>
+                        <td>
+                            <h3>主餐</h3>
+                        </td>
+                        <td>
+                            <div id="radio">
+                                <label>
+                                    <input type="radio" name="主餐" value="主餐-非常滿意">
+                                    <p class="round button">非常滿意</p>
+                                </label>
+                                <label>
+                                    <input type="radio" name="主餐" value="主餐-滿意">
+                                    <p class="round button">滿意</p>
+                                </label>
+                                <label>
+                                    <input type="radio" name="主餐" value="主餐-普通">
+                                    <p class="round button">普普</p>
+                                </label>
+                                <label>
+                                    <input type="radio" name="主餐" value="主餐-不滿意">
+                                    <p class="round button">不滿</p>
+                                </label>
+                                <label>
+                                    <input type="radio" name="主餐" value="主餐-非常不滿意">
+                                    <p class="round button">超不滿意</p>
+                                </label>
+                            </div>
+                        </td>
+                        <td>
+                            <h3>飲品</h3>
+                        </td>
+                        <td>
+                            <div id="radio" style="padding-bottom: 5px;">
+                                <label>
+                                    <input type="radio" name="飲品" value="飲品-非常滿意">
+                                    <p class="round button">非常滿意</p>
+                                </label>
+                                <label>
+                                    <input type="radio" name="飲品" value="飲品-滿意">
+                                    <p class="round button">滿意</p>
+                                </label>
+                                <label>
+                                    <input type="radio" name="飲品" value="飲品-普通">
+                                    <p class="round button">普普</p>
+                                </label>
+                                <label>
+                                    <input type="radio" name="飲品" value="飲品-不滿意">
+                                    <p class="round button">不滿</p>
+                                </label>
+                                <label>
+                                    <input type="radio" name="飲品" value="飲品-非常不滿意">
+                                    <p class="round button">超不滿意</p>
+                                </label>
+                            </div>
+                        </td>
+                        <td>
+                            <h3 style="margin-top:10px;">對於本店或服務人員建議：</h3>
+                            <textarea class="Suggestion" placeholder="請填入文字" name="suggestion" id="suggestion"></textarea>
+                        </td>
+                        <td>
+                            <div class="small-card">
+                                <h1 class="big-quote">"</h1>
+                                <h3>為提供更好的服務,請讓我們更了解您一點</h3>
+                                <p style="color:#999999">本問卷搜集來的資訊,僅會作為內部服務改善使用絕不外洩也不會作為其他用途使用,敬請放心填寫！</p>
+                            </div>
+                            <span style="padding:10px"></span>
+                        </td>
+                    </tr>
+                </div>
+            </div>
+            <div class="card3">
+                <div class="card">
+                    <tr>
+                        <td>
+                            <h2 style="padding-top:10px">這是你第幾次到本店用餐？</h2>
+                        </td>
+                        <td>
+                            <div class="second-container"id="radio">
+                                <label>
+                                    <input type="radio" name="Often-came-here" id="once">
+                                    <label class="round button"for="once">第 1 次</label>
+                                <label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="second-container" id="radio">
+                                <label>
+                                    <input type="radio" name="Often-came-here" id="2or3">
+                                    <label class="round button"for="2or3"> 2 , 3次</label>
+                                <label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="second-container" id="radio">
+                                <label>
+                                    <input type="radio" name="Often-came-here" id="4or6">
+                                    <label class="round button"for="4or6">4 , 6次</label>
+                                <label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h2>你是從哪得知本店的？<label class="warn">複選</label></h2>
+                        </td>
+                        <td>
+                            <div class="second-container"id="radio">
+                                <label class="round button" for="family">
+                                    <input type="checkbox" name="howdiduknow" id="family">
+                                    <label for="family">親友介紹</label>
+                                <label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="second-container"id="radio">
+                                <label class="round button" for="poster">
+                                    <input type="checkbox" name="howdiduknow" id="poster">
+                                    <label for="poster">宣傳傳單</label>
+                                <label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="second-container"id="radio">
+                                <label class="round button" for="internet">
+                                    <input type="checkbox" name="howdiduknow" id="internet">
+                                    <label for="internet">網路資訊</label>
+                                <label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="second-container"id="radio">
+                                <label class="round button" for="seemb4">
+                                    <input type="checkbox" name="howdiduknow" id="seemb4">
+                                    <label for="seemb4">經過看到</label>
+                                <label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="second-container"id="radio">
+                                <label class="round button" for="other">
+                                    <input type="checkbox" name="howdiduknow" id="other">
+                                    <label for="other">其他管道</label>
+                                <label>
+                            </div>
+                        </td>
+                        <td>
+                            <img src="https://doodleipsum.com/700?i=73307fb724563188616cb5114eca626f" style="max-width:300px"/>
+                        </td>
+                    </tr>
+                </div>
+            </div>
+            <div class="card4">
+                <div class="card">
+                    <tr>
+                        <td>
+                            <h2 style="padding-top:10px;">請問你今天用餐的目的是？<label class="warn">複選</label></h2>
+                        </td>
+                        <td>
+                            <div>
+                                <div id="radio">
+                                    <label>
+                                        <label class="round button">
+                                            <input type="checkbox" name="用餐的目的" id="單純用餐">
+                                        <label for="單純用餐">單純用餐</label>
+                                        </label>
+                                        <label class="round button">
+                                            <input type="checkbox" name="用餐的目的" id="朋友聚會">
+                                            <label for="朋友聚會">朋友聚會</label>
+                                        </label>
+                                        <label class="round button">
+                                            <input type="checkbox" name="用餐的目的" id="家庭聚會">
+                                        <label for="家庭聚會">家庭聚會</label>
+                                        </label>                                        
+                                        <label class="round button">
+                                            <input type="checkbox" name="用餐的目的" id="情侶聚會">
+                                        <label for="情侶聚會">情侶聚會</label>
+                                        </label>      
+                                    <label>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div id="radio">
+                                <label>
+                                    <label class="round button">
+                                        <input type="checkbox" name="用餐的目的" id="生日聚會">
+                                        <label for="生日聚會">生日聚會</label>
+                                    </label>                                        
+                                    <label class="round button">
+                                        <input type="checkbox" name="用餐的目的" id="節日聚會">
+                                        <label for="節日聚會">節日聚會</label>
+                                    </label>                                        
+                                    <label class="round button">
+                                        <input type="checkbox" name="用餐的目的" id="商務宴請">
+                                        <label for="商務宴請">商務宴請</label>   
+                                    </label>                                        
+                                    <label class="round button">
+                                        <input type="checkbox" name="用餐的目的" id="婚禮宴請">
+                                        <label for="婚禮宴請">婚禮宴請</label> 
+                                    </label>
+                                <label>
+                            </div>
+                        </td>
+                        <td>
+                            <div id="radio">
+                                <label>
+                                    <label class="round button">
+                                        <input type="checkbox" name="用餐的目的" id="尾牙春酒">
+                                        <label for="尾牙春酒">尾牙春酒</label>
+                                    </label>                                        
+                                    <label class="round button">
+                                        <input type="checkbox" name="用餐的目的" id="發表會">
+                                        <label for="發表會">發表會&nbsp;&nbsp;</label>
+                                    </label>                                        
+                                    <label class="round button">
+                                        <input type="checkbox" name="用餐的目的" id="記者會">
+                                        <label for="記者會">記者會&nbsp;&nbsp;</label>   
+                                    </label>                                        
+                                    <label class="round button">
+                                        <input type="checkbox" name="用餐的目的" id="其他目的">
+                                        <label for="其他目的">其他目的</label> 
+                                    </label>
+                                <label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h2>請問您今天是幾位用餐呢？</h2>
+                            <p style="color:#999999">需大於等於1</p>
+                            <input style="margin-bottom:10px;"type="number" name="幾位用餐" min="1">
+                            <label for="幾位用餐">位</label>
+                        </td>
+                        <td>
+                            <span style="margin-bottom:10px;">&nbsp;</span>
+                        </td>
+                        <td>
+                            <img src="https://doodleipsum.com/700?i=4dd5fd75c6118b7161fca2ffd991842a" style="max-width:350px"/>
+                        </td>
+                    </tr>
+                    
+                </div> 
+            </div>
+            <div class="card5">
+                <div class="card">
+                    <tr>
+                        <td>
+                            <h2 style="padding-top:10px">你再次來本店用餐的意願：</h2>
+                            <p style="color:#999999">0到10分,你的意願有多高呢？</p>
+                        </td>
+                        <td>
+                            <input type="range" min="0" max="10" step="1" value="意願">
+                        </td>
+                        <p style="color:#999999;padding-bottom:10px;">就快完成了！</p>
+                    </tr>
+                </div>
+            </div>
+            <div class="card6">
+                <div class="card">
+                    <span style="padding-top:10px;">&nbsp;</span>
+                    <div class="quote" style="margin-bottom:10px;" >
+                        <h3>&nbsp;個人資訊</h3>
+                        <p style="color:#999999;font-size:12px;">&nbsp;本問卷搜集來的資訊,僅會作為內部服務改善使用絕不外洩也不會作為其他用途使用,敬請放心填寫！</p>
+                    </div>
+                    <h4 style="text-align:left;max-width:200px;margin-left: auto;margin-right: auto;">姓名:</h4>
+                    <div style="text-align:left;max-width:200px;margin-left: auto;margin-right: auto;">
+                        <input type="text" style="max-width:200px;"  placeholder="請填入名字" name="名字">
+                    </div>
+                    <h4 style="text-align:left;max-width:200px;margin-left: auto;margin-right: auto;">性別：</h4>
+                    <div id="radio">
+                        <label>
+                            <input type="radio" name="性別" value="生理男">
+                            <p class="round button">生理男</p>
+                        </label>
+                        <label>
+                            <input type="radio" name="性別" value="生理女">
+                            <p class="round button">生理女</p>
+                        </label>
+                    </div>
+                    <div class="birthday">
+                        <h4 style="text-align:left;max-width:200px;margin-left: auto;margin-right: auto;">生日:</h4>
+                        <div style="text-align:left;max-width:200px;margin-left: auto;margin-right: auto;">
+                            <input type="date" id="birth">
+                        </div>
+                    </div>
+                    <div class="phone">
+                        <h4 style="text-align:left;max-width:200px;margin-left: auto;margin-right: auto;">電話:</h4>
+                        <div style="text-align:left;max-width:200px;margin-left: auto;margin-right: auto;">
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                    </div>
+                    <div class="mail">
+                        <h4 style="text-align:left;max-width:200px;margin-left: auto;margin-right: auto;">信箱:</h4>
+                        <div style="text-align:left;max-width:200px;margin-left: auto;margin-right: auto;">
+                            <input type="email" id="mail" name="mail">
+                        </div>
+                        <span style="margin-bottom: :10px;">&nbsp;</span>
+                        <img src="https://doodleipsum.com/700/flat?i=48dfa03845ff6d13a0a7dda755724a8b" style="max-width:300px;"/>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>
