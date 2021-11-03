@@ -109,38 +109,35 @@ elif (x == 0):
 from typing import SupportsAbs
 
 
-CarType=input("Type your Car Type (B or C):")
-Speed=float(input("超速幾公里?"))
-B=[1200,1400,1600,8000,12000,24000]
-C=[1600,1800,2000,8000,12000,24000]
-if CarType=="b":
-    if Speed<20: 
+CarType = input("Type your Car Type (B or C):")
+Speed = float(input("超速幾公里?"))
+B = [1200, 1400, 1600, 8000, 12000, 24000]
+C = [1600, 1800, 2000, 8000, 12000, 24000]
+if CarType == "b":
+    if Speed < 20:
         print("罰"+str(B[0]))
-    elif Speed<40:
+    elif Speed < 40:
         print("罰"+str(B[1]))
-    elif Speed<60:
+    elif Speed < 60:
         print("罰"+str(B[2]))
-    elif Speed<80:
+    elif Speed < 80:
         print("罰"+str(B[3]))
-    elif Speed<100:
+    elif Speed < 100:
         print("罰"+str(B[4]))
-    elif Speed >=100:
-        print("罰"+str(B[5]))   
-elif CarType=="c":
-    if Speed<20: 
+    elif Speed >= 100:
+        print("罰"+str(B[5]))
+elif CarType == "c":
+    if Speed < 20:
         print("罰"+str(C[0]))
-    elif Speed<40:
+    elif Speed < 40:
         print("罰"+str(C[1]))
-    elif Speed<60:
+    elif Speed < 60:
         print("罰"+str(C[2]))
-    elif Speed<80:
+    elif Speed < 80:
         print("罰"+str(C[3]))
-    elif Speed<100:
+    elif Speed < 100:
         print("罰"+str(C[4]))
-    elif Speed >=100:
-        print("罰"+str(C[5])) 
+    elif Speed >= 100:
+        print("罰"+str(C[5]))
 else:
     print("車子種類好特別 沒看過")
-
-
-
