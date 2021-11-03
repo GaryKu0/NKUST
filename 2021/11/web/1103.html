@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>C110156115 郭粟閣</title>
+    <style>
+        .box {
+            display: flex;
+        }
+
+        .box__half {
+            flex: 1;
+            margin: 10px;
+            box-shadow: whitesmoke;
+            background: #555555;
+            border-radius: 15px;
+            transition-duration: 0.4s;
+        }
+
+        img {
+            max-width: 100%;
+
+        }
+
+        .container-3card {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .box__half:hover {
+            background: #777777;
+        }
+
+        body {
+            background: #438b8b;
+        }
+
+        .nav-menu {
+            background: #121212;
+            max-height: 100px;
+            display: -webkit-box;
+            display: flex;
+            padding-left: 60px;
+            padding-right: 60px;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: whitesmoke;
+            text-align: center;
+            font-size: large;
+            display: flex;
+            height: 44px;
+            box-pack: center;
+            justify-content: center;
+            box-align: center;
+            align-items: center;
+            color: #fff;
+            text-decoration: none;
+            font-family: 'Noto Sans TC', sans-serif;
+            transition-duration: 0.4s;
+        }
+
+        h1 {
+            font-family: 'Noto Sans TC', sans-serif;
+            text-align: center;
+        }
+
+        .nav-link:hover {
+            background-color: #777777;
+
+        }
+    </style>
+</head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700&display=swap" rel="stylesheet">
+<body>
+    <div class="nav-menu">
+        <a href="#" class="nav-link">Home</a>
+        <a href="#" class="nav-link">About</a>
+        <a href="https://www.nkust.edu.tw/" class="nav-link">NKUST</a>
+        <a href="https://github.com/GaryKu0" target="_blank" class="nav-link">GitHub</a>
+    </div>
+    <h1 style="font-weight: 800; font-size:42px; text-decoration:underline;">Some website</h1>
+    <div class="container-3card">
+        <div class="box">
+            <div class="box__half">
+                <a href="https://doodleipsum.com">
+                    <img href="https://doodleipsum.com" target="_blank"
+                        src="https://doodleipsum.com/700x525/hand-drawn?i=71b58d528ae31771a2ea8150fc47b7e9">
+                    <h1 style="color:whitesmoke;">圖片的網址</h1>
+            </div>
+            <div class="box__half">
+                <a href="https://doodleipsum.com" target="_blank">
+                    <img href="https://doodleipsum.com"
+                        src="https://doodleipsum.com/700x525?i=aa232430a10425614dea28ed18c11a9e">
+                </a>
+                <h1 style="color:whitesmoke;">嗨</h1>
+            </div>
+            <div class="box__half">
+                <a href="https://doodleipsum.com" target="_blank">
+                    <img src="https://doodleipsum.com/700x525?i=b34d92fdc9cd2ae11d64fbba71474f63">
+                </a>
+                <h1 style="color:whitesmoke;">卡片</h1>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
