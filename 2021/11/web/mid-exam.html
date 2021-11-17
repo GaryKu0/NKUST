@@ -1,117 +1,201 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Stanford Performing Arts|C110156115 郭粟閣</title>
-        <style>
-            .card{
-                max-width: 800px;
-                position: relative;top:0px;
-                margin:auto;
-                border-radius: 15px;
-                background-color:whitesmoke;
-                box-shadow: 2px 2px 3px gray ;
-                transition-duration: 0.3s;
-            }
-            .titleBig{
 
-                color:#cc0000;
-                font-size: 36pt;
-                font-weight: bold;
-                font-family: sans-serif;
-                flex:4;
-                margin-left: 10px;
-            }
-            .titleSmall{
-                color:#cc0000;
-                font-size: 12pt;
-                font-weight:bold;
-                flex:1;
-                font-family: sans-serif;
-                margin-top: 40px;
-                text-align: right;
-                margin-right: 10px;
-            }
-            .Title{
-                display:flex;
-            }
-            .Main{
-                display:flex;
-            }
-            .article{
-                flex:5;
-            }
-            .calendar{
-                flex:3;
-            }
-            .Sectitle{
-                font-size: 18pt;
-                font-weight:bold;
-                font-family: sans-serif;
-            }
-            .calendar-title{
-                font-size:14pt;
-                font-weight:bold;
-                font-family: sans-serif;
-            }
-            .calendar-list{
-                font-size: 12pt;
-                font-style: italic;
-                font-family: sans-serif
-                ;
-            }
-            .under-line{
-                border-color: black;
-                border-bottom: 2px solid;
-            }
-            .card:hover{
-                position: relative;top:5px;
+<head>
+    <title>Stanford Performing Arts|C110156115 郭粟閣</title>
+    <style>
+        .card {
+            max-width: 800px;
+            position: relative;
+            top: 0px;
+            margin: auto;
+            border-radius: 15px;
+            background-color: whitesmoke;
+            box-shadow: 2px 2px 3px gray;
+            transition-duration: 0.3s;
+        }
 
+        .titleBig {
+            color: #cc0000;
+            font-size: 36pt;
+            font-weight: bold;
+            font-family: sans-serif;
+            flex: 4;
+            margin-left: 10px;
+        }
+
+        .titleSmall {
+            color: #cc0000;
+            font-size: 12pt;
+            font-weight: bold;
+            flex: 1;
+            font-family: sans-serif;
+            margin-top: 40px;
+            text-align: right;
+            margin-right: 10px;
+        }
+
+        .Title {
+            display: flex;
+        }
+
+        .Main {
+            display: flex;
+        }
+
+        .article {
+            flex: 5;
+        }
+
+        .calendar {
+            flex: 3;
+        }
+
+        .Sectitle {
+            font-size: 18pt;
+            font-weight: bold;
+            font-family: sans-serif;
+        }
+
+        .calendar-title {
+            font-size: 14pt;
+            font-weight: bold;
+            font-family: sans-serif;
+        }
+
+        .calendar-list {
+            font-size: 12pt;
+            font-style: italic;
+            font-family: sans-serif;
+        }
+
+        .under-line {
+            border-color: black;
+            border-bottom: 2px solid;
+        }
+
+        .card:hover {
+            position: relative;
+            top: 5px;
+
+        }
+
+        img {
+            float: left;
+            border-radius: 5px;
+            margin-right: 5px;
+            max-width: 35%;
+            transition-duration: 0.4s;
+        }
+
+        img:hover {
+            max-width: 95%;
+            border-radius: 15px;
+        }
+
+        /* CSS */
+        .button-23 {
+            background-color: #FFFFFF;
+            border: 1px solid #222222;
+            border-radius: 8px;
+            box-sizing: border-box;
+            color: #222222;
+            cursor: pointer;
+            display: inline-block;
+            font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 20px;
+            margin: 0;
+            outline: none;
+            padding: 13px 23px;
+            position: relative;
+            text-align: center;
+            text-decoration: none;
+            touch-action: manipulation;
+            transition: box-shadow .2s, -ms-transform .1s, -webkit-transform .1s, transform .1s;
+            user-select: none;
+            -webkit-user-select: none;
+            width: auto;
+        }
+
+        .button-23:focus-visible {
+            box-shadow: #222222 0 0 0 2px, rgba(255, 255, 255, 0.8) 0 0 0 4px;
+            transition: box-shadow .2s;
+        }
+
+        .button-23:active {
+            background-color: #F7F7F7;
+            border-color: #000000;
+            transform: scale(.96);
+        }
+
+        .button-23:disabled {
+            border-color: #DDDDDD;
+            color: #DDDDDD;
+            cursor: not-allowed;
+            opacity: 1;
+        }
+    </style>
+    <script>
+        function DogFactAPI() {
+            var requestLink = "https://some-random-api.ml/facts/dog"
+            //get json data from requestLink
+            var request = new XMLHttpRequest();
+            request.open('GET', requestLink);
+            request.responseType = 'json';
+            request.send();
+            request.onload = function () {
+                var data = request.response;
+                console.log(data);
+                //get dog facts
+                var dogFacts = data.fact;
+                document.getElementById("dogFacts").innerHTML = dogFacts;
             }
-            img{
-                float:left; 
-                border-radius:5px;
-                margin-right:5px; 
-                max-width: 35%;
-                transition-duration: 0.4s;
-            }
-            img:hover{
-                max-width: 95%;
-                border-radius: 15px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="card">
-            <div class="Title">
-                <h1 class="titleBig">Stanford Performing Arts</h1>
-                <h4 class="titleSmall">Autumn 2012 <br/>Edition</h4>
-            </div>
-            <div class="Main">
-                <div class="article" style="margin-left: 10px; margin-top:-10px;">
-                    <div class="Sectitle">
-                        <h2>Bing Concert Hall</h2>
-                    </div>
-                    <div class="article-text">
-                        <img src="https://images.unsplash.com/photo-1541990202460-76a724b4a44f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXwxMTQ4NDg2MHx8ZW58MHx8fHw%3D&w=1000&q=80">
-                        <p>
-                            The Bing Concert Hall at Stanford will play a vital role on campus and in the local community. The hall's exceptional acoustics and state-of-the-art technical capabilities will showcase the world's finest performers. 
-                        </p>
-                        <P>
-                            The hall is scheduled to open early in 2013. The concert hall will have 844 seats in an intimate vineyard-style configuration, with terraced sections wrapping all the way around the stage.
-                        </P>
-                    </div>
+        }
+
+    </script>
+</head>
+
+<body>
+    <div class="card">
+        <div class="Title">
+            <h1 class="titleBig">Stanford Performing Arts</h1>
+            <h4 class="titleSmall">Autumn 2012 <br />Edition</h4>
+        </div>
+        <div class="Main">
+            <div class="article" style="margin-left: 10px; margin-top:-10px;">
+                <div class="Sectitle">
+                    <h2>Bing Concert Hall</h2>
                 </div>
-                <div class="calendar" style="margin-right: 10px;">
-                    <h3 class="calendar-title">Calendar</h3>
-                    <div class="calendar-list">
-                        <p class="under-line" style="border-top: 2px solid;">Harmony for Humanity: Daniel Pearl World Music Concert</p>
-                        <p class="under-line" style="position: relative;top:-10px;">Sundays with the St. Lawrence String Quartet</p>
-                        <p class="under-line" style="position: relative;top:-15px;">Merce Cunningham Dance Company</p>
-                        <p class="under-line" style="position: relative;top:-15px;">Juilliard String Quartet</p>
-                    </div>
+                <div class="article-text">
+                    <img
+                        src="https://images.unsplash.com/photo-1541990202460-76a724b4a44f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXwxMTQ4NDg2MHx8ZW58MHx8fHw%3D&w=1000&q=80">
+                    <p>
+                        The Bing Concert Hall at Stanford will play a vital role on campus and in the local community.
+                        The hall's exceptional acoustics and state-of-the-art technical capabilities will showcase the
+                        world's finest performers.
+                    </p>
+                    <P id="dogFacts">
+                        The hall is scheduled to open early in 2013. The concert hall will have 844 seats in an intimate
+                        vineyard-style configuration, with terraced sections wrapping all the way around the stage.
+                    </P>
+                    <!--<button class="button-23" role="button" onclick="DogFactAPI()">Dog Facts</button>-->
+                </div>
+            </div>
+            <div class="calendar" style="margin-right: 10px;">
+                <h3 class="calendar-title">Calendar</h3>
+                <div class="calendar-list">
+                    <p class="under-line" style="border-top: 2px solid;">Harmony for Humanity: Daniel Pearl World Music
+                        Concert</p>
+                    <p class="under-line" style="position: relative;top:-10px;">Sundays with the St. Lawrence String
+                        Quartet</p>
+                    <p class="under-line" style="position: relative;top:-15px;">Merce Cunningham Dance Company</p>
+                    <p class="under-line" style="position: relative;top:-15px;">Juilliard String Quartet</p>
                 </div>
             </div>
         </div>
-    </body>
+    </div>
+</body>
 
 </html>

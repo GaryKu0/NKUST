@@ -1,0 +1,155 @@
+<head>
+    <script src="https://kit.fontawesome.com/ce88b0f6fd.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background: #121212;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .search-box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #ffffff;
+            height: 40px;
+            padding: 10px;
+            border-radius: 15px;
+            z-index: 5;
+            display: flex;
+        }
+
+        .search-btn {
+            color: gray;
+
+            height: 40px;
+            width: 40px;
+            border-radius: 15px;
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 0.3s;
+        }
+
+        .search-txt {
+            height: 40px;
+            border: none;
+            background: none;
+            outline: none;
+            font-size: 16px;
+            transition-duration: 0.4s;
+            padding: 0px;
+            width: 0px;
+        }
+
+        .search-box:hover>.search-txt {
+            width: 240px;
+        }
+
+        .search-box:hover>.search-btn {
+            background: rgb(7, 190, 7);
+            color: whitesmoke;
+        }
+
+        .card {
+            margin: 0 auto;
+            text-align: center;
+            border-radius: 15px;
+            background-color: whitesmoke;
+            margin-top: 50px;
+            margin-left: 20%;
+            position: absolute;
+            width: 60%;
+            max-height: 90%;
+            box-sizing: border-box;
+            z-index: 12500;
+            display: none;
+            opacity: 0;
+            transition-duration: 0.3s;
+        }
+
+        .btn-gra {
+            background: linear-gradient(to bottom right, #EF4765, #FF9A5A);
+            border: 0;
+            border-radius: 12px;
+            color: #FFFFFF;
+            cursor: pointer;
+            display: inline-block;
+            font-family: -apple-system, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 2.5;
+            outline: transparent;
+            padding: 0 1rem;
+            text-align: center;
+            text-decoration: none;
+            transition: box-shadow .2s ease-in-out;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            white-space: nowrap;
+            margin-bottom:10px;
+        }
+
+        .btn-gra:not([disabled]):focus {
+            box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+        }
+
+        .btn-gra:not([disabled]):hover {
+            box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card" id="card">
+        <p id="Score">dkfjdgkfgp</p>
+        <div style="max-height:90%;">
+            <img id="grade-pic" style="margin-bottom:20px;max-height:450px;border-radius:5px;" src="https://via.placeholder.com/350x150" alt="">
+        </div>
+        <button class="btn-gra" onclick="hide()" role="button">關閉視窗</button>
+
+    </div>
+    <div class="search-box">
+        <input class="search-txt" id="grade" type="text" placeholder="輸入成績">
+        <a id="search" href="javascript:void(0);" onclick="grade()" class="search-btn">
+            <i class="fas fa-arrow-alt-circle-right"></i>
+        </a>
+    </div>
+    <script>
+        function hide(){
+            document.getElementById("card").style.display = "none";
+        }
+        function grade() {
+            var grade = document.getElementById("grade").value;
+            document.getElementById("card").style.opacity = "1";
+            document.getElementById("card").style.display = "block";
+            if (grade >= 101) {
+                document.getElementById("grade-pic").src = "https://c.tenor.com/BfGFYekoftQAAAAC/spongebob-squarepants-spongebob.gif";
+                document.getElementById("Score").innerHTML = "想像力是你的超能力,但是沒人能超過100喔";
+            }
+            else if (grade >= 90) {
+                document.getElementById("grade-pic").src = "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/bf243753-0537-4e41-800e-3d59359cd6ee/d5fyxia-917b5ec7-b548-473c-86c3-a815401005b7.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2JmMjQzNzUzLTA1MzctNGU0MS04MDBlLTNkNTkzNTljZDZlZVwvZDVmeXhpYS05MTdiNWVjNy1iNTQ4LTQ3M2MtODZjMy1hODE1NDAxMDA1YjcucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.dAOb4Go1z_4WBIVW7C48PxQ1FV2B9D1NwegQYBSqa1Q";
+                document.getElementById("Score").innerHTML = "恭喜你，你的成績是" + grade + "分，獲得了A級";
+            }
+            else if (grade >= 80) {
+                document.getElementById("grade-pic").src = "https://i.pinimg.com/originals/91/28/25/9128256558f33035d3837cb0353e77e0.png";
+                document.getElementById("Score").innerHTML = "恭喜你，你的成績是" + grade + "分，獲得了B級";
+            }
+            else if (grade >= 70) {
+                document.getElementById("grade-pic").src = "http://up.bizhitupian.com/pic_360/b8/13/ee/b813eeb36c67cbe81c656814fffcc360.jpg";
+                document.getElementById("Score").innerHTML = "恭喜你，你的成績是" + grade + "分，獲得了C級";
+            }
+            else if (grade >= 60) {
+                document.getElementById("grade-pic").src = "https://memeprod.sgp1.digitaloceanspaces.com/user-wtf/1587384378140.jpg";
+                document.getElementById("Score").innerHTML = "恭喜你，你的成績是" + grade + "分，獲得了D級";
+            }
+            else if (grade < 60) {
+                document.getElementById("grade-pic").src = "https://i.ytimg.com/vi/lqpuIMzi5Ig/maxresdefault.jpg";
+                document.getElementById("Score").innerHTML = "請加油，你的成績是" + grade + "分，獲得了F級";
+            }
+        }
+    </script>
+</body>
