@@ -114,13 +114,13 @@
         </div>
         <div style="display:flex;max-width:60%;margin:0 auto;">
             <button style="flex:1;margin-right:10px;" class="btn-gra" onclick="hide()" role="button">關閉視窗</button>
-            <button style="flex:1; margin-left:10px;" class="btn-gra" onclick="dogfact()" role="button">狗夠知識</button>
+            <button style="flex:1; margin-left:10px;" class="btn-gra" onclick="dogfact()" role="button">狗勾知識</button>
         </div>
 
 
     </div>
     <div class="search-box">
-        <input class="search-txt" id="grade" type="text" placeholder="輸入成績">
+        <input class="search-txt" id="grade" type="number" placeholder="輸入成績">
         <a id="search" href="javascript:void(0);" onclick="grade()" class="search-btn">
             <i class="fas fa-arrow-alt-circle-right"></i>
         </a>
@@ -153,19 +153,19 @@
             }
             else if (grade >= 90) {
                 document.getElementById("grade-pic").src = "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/bf243753-0537-4e41-800e-3d59359cd6ee/d5fyxia-917b5ec7-b548-473c-86c3-a815401005b7.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2JmMjQzNzUzLTA1MzctNGU0MS04MDBlLTNkNTkzNTljZDZlZVwvZDVmeXhpYS05MTdiNWVjNy1iNTQ4LTQ3M2MtODZjMy1hODE1NDAxMDA1YjcucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.dAOb4Go1z_4WBIVW7C48PxQ1FV2B9D1NwegQYBSqa1Q";
-                document.getElementById("Score").innerHTML = "恭喜你，你的成績是" + grade + "分，獲得了A級";
+                document.getElementById("Score").innerHTML = "恭喜你，你的成績是" + grade + "分，獲得了優等";
             }
             else if (grade >= 80) {
                 document.getElementById("grade-pic").src = "https://i.pinimg.com/originals/91/28/25/9128256558f33035d3837cb0353e77e0.png";
-                document.getElementById("Score").innerHTML = "恭喜你，你的成績是" + grade + "分，獲得了B級";
+                document.getElementById("Score").innerHTML = "恭喜你，你的成績是" + grade + "分，獲得了甲等";
             }
             else if (grade >= 70) {
                 document.getElementById("grade-pic").src = "http://up.bizhitupian.com/pic_360/b8/13/ee/b813eeb36c67cbe81c656814fffcc360.jpg";
-                document.getElementById("Score").innerHTML = "恭喜你，你的成績是" + grade + "分，獲得了C級";
+                document.getElementById("Score").innerHTML = "恭喜你，你的成績是" + grade + "分，獲得了乙等";
             }
             else if (grade >= 60) {
                 document.getElementById("grade-pic").src = "https://memeprod.sgp1.digitaloceanspaces.com/user-wtf/1587384378140.jpg";
-                document.getElementById("Score").innerHTML = "恭喜你，你的成績是" + grade + "分，獲得了D級";
+                document.getElementById("Score").innerHTML = "恭喜你，你的成績是" + grade + "分，獲得了丙等";
             }
             else if (grade < 0) {
                 document.getElementById("grade-pic").src = "https://i.ytimg.com/vi/lqpuIMzi5Ig/maxresdefault.jpg";
@@ -173,7 +173,11 @@
             }
             else if (grade < 60) {
                 document.getElementById("grade-pic").src = "https://i.ytimg.com/vi/lqpuIMzi5Ig/maxresdefault.jpg";
-                document.getElementById("Score").innerHTML = "請加油，你的成績是" + grade + "分，獲得了F級";
+                document.getElementById("Score").innerHTML = "請加油，你的成績是" + grade + "分，獲得了不及格";
+            }
+            else{
+                document.getElementById("grade-pic").src = "https://c.tenor.com/BfGFYekoftQAAAAC/spongebob-squarepants-spongebob.gif";
+                document.getElementById("Score").innerHTML = "你不應該打出數字以外的值的";
             }
     
         }
