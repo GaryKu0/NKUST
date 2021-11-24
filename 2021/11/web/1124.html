@@ -6,24 +6,36 @@
     <title>猜數字</title>
     <script src="https://kit.fontawesome.com/ce88b0f6fd.js" crossorigin="anonymous"></script>
     <style>
+        body {
+            background-image: url(https://images.unsplash.com/photo-1579546929662-711aa81148cf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8&w=1000&q=80);
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            background-repeat: no-repeat;
+            background-size:cover;
+        }
+        /*made .card in the middle of the page*/
         .card {
             margin: 0 auto;
-            background-color: whitesmoke;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
             box-shadow: 2px 2px 3px gray;
             border-radius: 15px;
             text-align: center;
-            max-width: 800px;
-            margin-top: 20px;
+            max-width: 550px;
             padding: 10px;
+            opacity: 0.8;  
+            transition-duration: 0.4s;
         }
-
+        .container{
+            text-align: center;
+            margin-top: 75px;
+        }
         .search-btn {
             flex: 1;
-            color: gray;
+            color: #0d3519;
             height: 40px;
             width: 40px;
-            border-radius: 20px;
-            background: white;
+            border-radius: 15px;
+            background: #a5b4fc;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -34,7 +46,7 @@
 
         .search-box {
             position: relative;
-            background: #ffffff;
+            background: #e0e7ff;
             height: 40px;
             padding: 10px;
             border-radius: 15px;
@@ -43,19 +55,22 @@
             max-width: 400px;
             margin: 0 auto;
             text-align: center;
+            transition-duration: 0.4s;
+            opacity: 1;
         }
 
         .search-box1 {
             position: relative;
-            background: #ffffff;
+            background: #e0e7ff;
             height: 40px;
             padding: 10px;
-            border-radius: 15px;
+            border-radius: 20px;
             z-index: 5;
             display: flex;
             max-width: 400px;
             margin: 0 auto;
             text-align: center;
+            opacity: 1;
         }
 
         .search-txt {
@@ -70,18 +85,27 @@
         }
 
         .search-box:hover>.search-txt {
-            width: 300px;
+            width: 80%;
         }
 
         .search-box1:hover>.search-btn {
-            background: rgb(7, 190, 7);
+            background: #818cf8;
             color: whitesmoke;
         }
 
         .search-box:hover>.search-btn {
-            background: rgb(7, 190, 7);
+            background: #818cf8;
             color: whitesmoke;
         }
+        .xmas{
+            -webkit-animation:spin 1.8s infinite linear;
+        }
+        @-webkit-keyframes spin{
+            0%{-webkit-transform:rotate(-20deg);}
+            50%{-webkit-transform:rotate(20deg);}
+            100%{-webkit-transform:rotate(-20deg);}
+        }
+
     </style>
 </head>
 
@@ -89,15 +113,17 @@
     <div class="container">
         <div class="card">
             <h1>猜數字</h1>
+            <img class="xmas" alt="Mistletoe 3D Illustration by Iconscout Store" style="max-height:100px;" src="https://cdn3d.iconscout.com/3d/free/thumb/mistletoe-3112700-2595905.png">
             <div class="search-box1" id="search-box">
-                <input class="search-txt" id="input-num" type="number" placeholder="猜一個數字">
+                <input class="search-txt"  id="input-num" type="number" placeholder="猜一個數字">
                 <a id="search" href="#" onclick="guessNumber()" class="search-btn">
                     <i class="fas fa-arrow-alt-circle-right"></i>
                 </a>
             </div>
-            <h3 id="message" class="message">Hello</h3>
+            <h3 id="message" class="message">按下箭頭開始遊戲</h3>
             <p id="hidden-answer" style="display:none"></p>
         </div>
+    </div>
         <script>
             var HowManyGuess = 0;
             var randomNum = 0;
@@ -106,7 +132,7 @@
                 if (HowManyGuess == 0) {
                     document.getElementById("search-box").className = "search-box";
                     document.getElementById("hidden-answer").innerHTML = Math.floor(Math.random() * 100);
-                    document.getElementById("message").innerHTML = "";
+                    document.getElementById("message").innerHTML = "請輸入一個數字";
                     HowManyGuess++;
                     console.log(randomNum);
                 }
@@ -127,7 +153,7 @@
                     HowManyGuess = 0;
                 }
                 HowManyGuess++;
-                document.getElementById("input-num").value = "";
+                document.getElementById("input-num").value = " ";
 
             }
         </script>
