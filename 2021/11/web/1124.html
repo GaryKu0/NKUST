@@ -10,8 +10,9 @@
             background-image: url(https://images.unsplash.com/photo-1579546929662-711aa81148cf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8&w=1000&q=80);
             font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
             background-repeat: no-repeat;
-            background-size:cover;
+            background-size: cover;
         }
+
         /*made .card in the middle of the page*/
         .card {
             margin: 0 auto;
@@ -22,13 +23,15 @@
             text-align: center;
             max-width: 550px;
             padding: 10px;
-            opacity: 0.8;  
+            opacity: 0.8;
             transition-duration: 0.4s;
         }
-        .container{
+
+        .container {
             text-align: center;
             margin-top: 75px;
         }
+
         .search-btn {
             flex: 1;
             color: #0d3519;
@@ -97,15 +100,24 @@
             background: #818cf8;
             color: whitesmoke;
         }
-        .xmas{
-            -webkit-animation:spin 1.8s infinite linear;
-        }
-        @-webkit-keyframes spin{
-            0%{-webkit-transform:rotate(-20deg);}
-            50%{-webkit-transform:rotate(20deg);}
-            100%{-webkit-transform:rotate(-20deg);}
+
+        .xmas {
+            -webkit-animation: spin 1.8s infinite linear;
         }
 
+        @-webkit-keyframes spin {
+            0% {
+                -webkit-transform: rotate(-20deg);
+            }
+
+            50% {
+                -webkit-transform: rotate(20deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(-20deg);
+            }
+        }
     </style>
 </head>
 
@@ -113,9 +125,11 @@
     <div class="container">
         <div class="card">
             <h1>猜數字</h1>
-            <img class="xmas" alt="Mistletoe 3D Illustration by Iconscout Store" style="max-height:100px;" src="https://cdn3d.iconscout.com/3d/free/thumb/mistletoe-3112700-2595905.png">
+            <img class="xmas" alt="Mistletoe 3D Illustration by Iconscout Store" style="max-height:100px;"
+                src="https://cdn3d.iconscout.com/3d/free/thumb/mistletoe-3112700-2595905.png">
             <div class="search-box1" id="search-box">
-                <input class="search-txt" onkeyup="value=value.replace(/[^\d]/g,'') " ng-pattern="/[^a-zA-Z]/"  id="input-num" type="number" placeholder="猜一個數字">
+                <input class="search-txt" onkeyup="value=value.replace(/[^\d]/g,'') " ng-pattern="/[^a-zA-Z]/"
+                    id="input-num" type="number" placeholder="猜一個數字">
                 <a id="search" href="#" onclick="guessNumber()" class="search-btn">
                     <i class="fas fa-arrow-alt-circle-right"></i>
                 </a>
@@ -124,39 +138,46 @@
             <p id="hidden-answer" style="display:none"></p>
         </div>
     </div>
-        <script>
-            var HowManyGuess = 0;
-            var randomNum = 0;
-            function guessNumber() {
-                var num = document.getElementById("input-num").value;
-                if (HowManyGuess == 0) {
-                    document.getElementById("search-box").className = "search-box";
-                    document.getElementById("hidden-answer").innerHTML = Math.floor(Math.random() * 100);
-                    document.getElementById("message").innerHTML = "請輸入一個數字";
-                    HowManyGuess++;
-                    console.log(randomNum);
+    <script>
+        var HowManyGuess = 0;
+        var randomNum = 0;
+        document.getElementById("input-num")
+            .addEventListener("keyup", function (event) {
+                event.preventDefault();
+                if (event.keyCode === 13) {
+                    document.getElementById("search").click();
                 }
-                var bb = HowManyGuess - 1
-                console.log("You guess " + bb + "time and you guess " + document.getElementById("input-num").value + " and the answer is" + randomNum);
-                randomNum = document.getElementById("hidden-answer").innerHTML;
-                if (num > randomNum) {
-                    document.getElementById("message").innerHTML = "太大了";
-                }
-                else if (num < randomNum) {
-                    if (HowManyGuess != 1) {
-                        document.getElementById("message").innerHTML = "太小了";
-                    }
-                }
-                else if (num == randomNum) {
-                    HowManyGuess--;
-                    document.getElementById("message").innerHTML = "猜對了答案是" + randomNum + "你總共猜了" + HowManyGuess + "次";
-                    HowManyGuess = 0;
-                }
+            });
+        function guessNumber() {
+            var num = document.getElementById("input-num").value;
+            if (HowManyGuess == 0) {
+                document.getElementById("search-box").className = "search-box";
+                document.getElementById("hidden-answer").innerHTML = Math.floor(Math.random() * 100);
+                document.getElementById("message").innerHTML = "請輸入一個數字";
                 HowManyGuess++;
-                document.getElementById("input-num").value = " ";
-
+                console.log(randomNum);
             }
-        </script>
+            var bb = HowManyGuess - 1
+            console.log("You guess " + bb + "time and you guess " + document.getElementById("input-num").value + " and the answer is" + randomNum);
+            randomNum = document.getElementById("hidden-answer").innerHTML;
+            if (num > randomNum) {
+                document.getElementById("message").innerHTML = "太大了";
+            }
+            else if (num < randomNum) {
+                if (HowManyGuess != 1) {
+                    document.getElementById("message").innerHTML = "太小了";
+                }
+            }
+            else if (num == randomNum) {
+                HowManyGuess--;
+                document.getElementById("message").innerHTML = "猜對了答案是" + randomNum + "你總共猜了" + HowManyGuess + "次";
+                HowManyGuess = 0;
+            }
+            HowManyGuess++;
+            document.getElementById("input-num").value = " ";
+
+        }
+    </script>
 </body>
 
 </html>
