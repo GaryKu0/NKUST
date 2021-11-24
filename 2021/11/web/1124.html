@@ -115,7 +115,7 @@
             <h1>猜數字</h1>
             <img class="xmas" alt="Mistletoe 3D Illustration by Iconscout Store" style="max-height:100px;" src="https://cdn3d.iconscout.com/3d/free/thumb/mistletoe-3112700-2595905.png">
             <div class="search-box1" id="search-box">
-                <input class="search-txt"  id="input-num" type="number" placeholder="猜一個數字">
+                <input class="search-txt" onkeyup="value=value.replace(/[^\d]/g,'') " ng-pattern="/[^a-zA-Z]/"  id="input-num" type="number" placeholder="猜一個數字">
                 <a id="search" href="#" onclick="guessNumber()" class="search-btn">
                     <i class="fas fa-arrow-alt-circle-right"></i>
                 </a>
