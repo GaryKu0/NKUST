@@ -1,0 +1,136 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>猜數字</title>
+    <script src="https://kit.fontawesome.com/ce88b0f6fd.js" crossorigin="anonymous"></script>
+    <style>
+        .card {
+            margin: 0 auto;
+            background-color: whitesmoke;
+            box-shadow: 2px 2px 3px gray;
+            border-radius: 15px;
+            text-align: center;
+            max-width: 800px;
+            margin-top: 20px;
+            padding: 10px;
+        }
+
+        .search-btn {
+            flex: 1;
+            color: gray;
+            height: 40px;
+            width: 40px;
+            border-radius: 20px;
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 50px;
+            transition: 0.3s;
+            margin: 0;
+        }
+
+        .search-box {
+            position: relative;
+            background: #ffffff;
+            height: 40px;
+            padding: 10px;
+            border-radius: 15px;
+            z-index: 5;
+            display: flex;
+            max-width: 400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .search-box1 {
+            position: relative;
+            background: #ffffff;
+            height: 40px;
+            padding: 10px;
+            border-radius: 15px;
+            z-index: 5;
+            display: flex;
+            max-width: 400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .search-txt {
+            height: 40px;
+            border: none;
+            background: none;
+            outline: none;
+            font-size: 16px;
+            transition-duration: 0.4s;
+            padding: 0px;
+            width: 0px;
+        }
+
+        .search-box:hover>.search-txt {
+            width: 300px;
+        }
+
+        .search-box1:hover>.search-btn {
+            background: rgb(7, 190, 7);
+            color: whitesmoke;
+        }
+
+        .search-box:hover>.search-btn {
+            background: rgb(7, 190, 7);
+            color: whitesmoke;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>猜數字</h1>
+            <div class="search-box1" id="search-box">
+                <input class="search-txt" id="input-num" type="number" placeholder="猜一個數字">
+                <a id="search" href="#" onclick="guessNumber()" class="search-btn">
+                    <i class="fas fa-arrow-alt-circle-right"></i>
+                </a>
+            </div>
+            <h3 id="message" class="message">Hello</h3>
+            <p id="hidden-answer" style="display:none"></p>
+        </div>
+        <script>
+            var HowManyGuess = 0;
+            var randomNum = 0;
+            function guessNumber() {
+                var num = document.getElementById("input-num").value;
+                if (HowManyGuess == 0) {
+                    document.getElementById("search-box").className = "search-box";
+                    document.getElementById("hidden-answer").innerHTML = Math.floor(Math.random() * 100);
+                    document.getElementById("message").innerHTML = "";
+                    HowManyGuess++;
+                    console.log(randomNum);
+                }
+                var bb = HowManyGuess - 1
+                console.log("You guess " + bb + "time and you guess " + document.getElementById("input-num").value + " and the answer is" + randomNum);
+                randomNum = document.getElementById("hidden-answer").innerHTML;
+                if (num > randomNum) {
+                    document.getElementById("message").innerHTML = "太大了";
+                }
+                else if (num < randomNum) {
+                    if (HowManyGuess != 1) {
+                        document.getElementById("message").innerHTML = "太小了";
+                    }
+                }
+                else if (num == randomNum) {
+                    HowManyGuess--;
+                    document.getElementById("message").innerHTML = "猜對了答案是" + randomNum + "你總共猜了" + HowManyGuess + "次";
+                    HowManyGuess = 0;
+                }
+                HowManyGuess++;
+                document.getElementById("input-num").value = "";
+
+            }
+        </script>
+</body>
+
+</html>
