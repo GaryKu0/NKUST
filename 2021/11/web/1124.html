@@ -172,6 +172,7 @@
                 HowManyGuess--;
                 document.getElementById("message").innerHTML = "猜對了答案是" + randomNum + "你總共猜了" + HowManyGuess + "次";
                 HowManyGuess = 0;
+                document.getElementById("search-box").className = "search-box1";
             }
             HowManyGuess++;
             document.getElementById("input-num").value = "";
