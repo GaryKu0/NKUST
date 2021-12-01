@@ -148,6 +148,10 @@
                     document.getElementById("search").click();
                 }
             });
+        var timeCount=0   
+        function timer(){
+            timeCount++
+        }
         function guessNumber() {
             var num = document.getElementById("input-num").value;
             if (HowManyGuess == 0) {
@@ -156,6 +160,7 @@
                 document.getElementById("message").innerHTML = "請輸入一個數字";
                 HowManyGuess++;
                 console.log(randomNum);
+                var time=setInterval(function(){timer()},1000);
             }
             var bb = HowManyGuess - 1
             console.log("You guess " + bb + "time and you guess " + document.getElementById("input-num").value + " and the answer is" + randomNum);
@@ -170,7 +175,9 @@
             }
             else if (num == randomNum) {
                 HowManyGuess--;
-                document.getElementById("message").innerHTML = "猜對了答案是" + randomNum + "你總共猜了" + HowManyGuess + "次";
+                clearInterval(timer);
+                document.getElementById("message").innerHTML = "猜對了答案是" + randomNum + "你總共猜了" + HowManyGuess + "次 花了"+timeCount+"秒";
+                timeCount=0;
                 HowManyGuess = 0;
                 HowManyGuess--;
                 document.getElementById("search-box").className = "search-box1";
