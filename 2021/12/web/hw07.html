@@ -1,0 +1,66 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>HW07</title>
+    <link rel="stylesheet" href="hw07.css">
+    <style>
+        .card {
+            margin: 0 auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            box-shadow: 2px 2px 3px gray;
+            border-radius: 15px;
+            text-align: center;
+            max-width: 550px;
+            padding: 10px;
+            opacity: 0.8;
+            transition-duration: 0.4s;
+            margin-top: 10px;
+        }
+
+        .btn {
+            background: linear-gradient(to right, #eb2671, #2b7bf3);
+            border-radius: 10px;
+            height: 50px;
+            display: flex;
+            /*made btn in the middle of Btn-Container*/
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            color: rgb(190, 190, 190);
+            font-family: 'Readex Pro', sans-serif;
+            margin: 0 auto;
+            text-align: center;
+            text-decoration: none;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!--Create a button-->
+
+    <div style="display: flex;" class="card">
+        <button style="flex:1;" class="btn" id="btn">Click Me</button>
+        <button style="flex:1;"" class=" btn"id="btn2">Del</button>
+    </div>
+    <div id="album" class="card">
+    </div>
+    <script type="text/javascript">
+        //when btn2 is clicked, it will delete last image in the html
+        document.getElementById("btn2").addEventListener("click", function () {
+            var album = document.getElementById("album");
+            album.removeChild(album.lastChild);
+        });
+        //when btn is clicked, it will insert a random img into album
+        document.getElementById("btn").addEventListener("click", function () {
+            var img = document.createElement("img");
+            img.src = "https://picsum.photos/200/300?random=" + Math.random();
+            document.getElementById("album").appendChild(img);
+        });
+
+    </script>
+</body>
+
+</html>
