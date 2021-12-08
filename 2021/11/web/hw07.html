@@ -44,6 +44,7 @@
     <div style="display: flex;" class="card">
         <button style="flex:1;" class="btn" id="btn">Click Me</button>
         <button style="flex:1;"" class=" btn"id="btn2">Del</button>
+        <input type="color" style="flex:1;"" class=" btn" id="color3"></button>
     </div>
     <div id="album" class="card">
     </div>
@@ -59,7 +60,14 @@
             img.src = "https://picsum.photos/200/300?random=" + Math.random();
             document.getElementById("album").appendChild(img);
         });
-
+        //when btn is clicked, it will insert a 200x300 div with color of the color picker
+        document.getElementById("color3").addEventListener("change", function () {
+            var div = document.createElement("div");
+            div.style.width = "200px";
+            div.style.height = "300px";
+            div.style.backgroundColor = this.value;
+            document.getElementById("album").appendChild(div);
+        });
     </script>
 </body>
 
