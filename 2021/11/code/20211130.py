@@ -12,3 +12,4 @@ print("共有"+str(len(scores))+"位學生")
 print("本班總成績:"+str(total)+",平均為"+str(total/len(scores))+"分")
 # print all value in scores
 print("全部成績:", scores)
+
