@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<title>Game</title>
+
+<head>
+    <style>
+        .main {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            width: 800px;
+            height: 320px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+            background: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            opacity: 0.8;
+            z-index: 1;
+            text-align: center;
+            overflow: hidden;
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #1d1c1c;
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            background-color: rgb(99, 99, 99);
+            color:whitesmoke;
+            margin-top: 20px;
+            padding: 15px 15px;
+            border-radius: 12px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+        .nav-links li {
+            list-style: none;
+            margin: 0 12px;
+        }
+        .nav-links li a {
+            position: relative;
+            color: rgb(207, 207, 207);
+            font-size: 18px;
+            font-weight: 500;
+            padding: 6px 0;
+            text-decoration: none;
+        }
+        .nav-links li a:before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 3px;
+            width: 0%;
+            background: #34efdf;
+            border-radius: 12px;
+            transition: all 0.4s ease;
+        }
+        .nav-links li a:hover:before {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <!--這是我剛好在測試的其他東西-->
+    <ul class="nav-links">
+        <li><a href="#">Dashboard</a></li>
+        <li><a href="#">Portfolio</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Feedback</a></li>
+    </ul>
+    <!--分隔線-->
+    <div class="main">
+        <canvas id="canvas" width="800" height="320"></canvas>
+    </div>
+    <script>
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d");
+        var score = 1;
+        var level = 1;
+        var tick =5;var monsterReady = false;
+        /*var BG = new Image();
+        BG.image = new Image();
+        BG.src = "img/Background1.jpg";
+        BG.onload = function () {
+            ctx.drawImage(BG, 0, 0, 800, 320);
+        }*/
+        
+        var CanvaHeight=document.getElementById("canvas").height;
+        var CanvasWidth=document.getElementById("canvas").width;
+        
+        var BombImage = new Image();
+        BombImage.src = "img/Rat.png";
+        var monsterImage = new Image();
+        monsterImage.src = "https://raw.githubusercontent.com/lostdecade/simple_canvas_game/master/images/monster.png";
+        function Summon(){
+            //genarate a random munber between 1 and 10
+            var random = Math.floor(Math.random() * 10) + 1;
+            console.log(random);
+            if (random==10){
+                //summon Bomb  
+                console.log("Summon Bomb");
+                Bomb();
+            }
+            if (random!=10){
+                //summon Rats
+                console.log("Summon Rats");
+                Rats();
+            }
+        }
+        function Rats(){
+            //create a Rats in the canva random position
+            this.x = Math.floor(Math.random() * (CanvasWidth-50));
+            this.y = Math.floor(Math.random() * (CanvaHeight-50));
+            console.log(this.x,this.y);
+            this.width = 50;
+            this.height = 50;
+            ctx.drawImage(monsterImage, this.x, this.y,this.width, this.height);
+            //if this exist over than tick seconds destroy it
+            setTimeout(function(){
+                ctx.clearRect(this.x, this.y, this.width, this.height);
+            },tick*990);
+            LeveUp();
+            //if Click on this destroy it and plus 1 score
+            canvas.addEventListener('click', function(event) {
+                if (event.x > this.x && event.x < this.x + this.width && event.y > this.y && event.y < this.y + this.height) {
+                    ctx.clearRect(this.x, this.y, this.width, this.height);
+                    score++;
+                    console.log(score);
+                }
+            });
+        } 
+        //every 20score get made tick*2/3
+        function LeveUp(){
+            if (score%20==0){
+                tick=tick*2/3;
+                level++;
+                console.log(tick);
+            }
+        }
+        function Bomb(){
+            this.x = Math.floor(Math.random() * (CanvasWidth-50));
+            this.y = Math.floor(Math.random() * (CanvaHeight-50));
+            console.log(this.x,this.y);
+            this.width = 50;
+            this.height = 50;
+            ctx.drawImage(BombImage, this.x, this.y,this.width, this.height);
+            //if this exist over than tick seconds destroy it
+            setTimeout(function(){
+                ctx.clearRect(this.x, this.y, this.width, this.height);
+            },tick*990);
+        }
+        //summon again after 5 seconds
+        setInterval(function(){
+            Summon();
+        },tick*1000);
+        //when website loaded run summon();
+        window.onload = Summon();
+
+    </script>
+</body>
+
+</html>
