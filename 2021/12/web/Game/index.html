@@ -120,10 +120,12 @@
                 Rats();
             }
         }
+        var RatsXX=0;
+        var RatsYY=0;
         function Rats(){
             //create a Rats in the canva random position
-            this.x = Math.floor(Math.random() * (CanvasWidth-50));
-            this.y = Math.floor(Math.random() * (CanvaHeight-50));
+            var RatX=this.x = Math.floor(Math.random() * (CanvasWidth-50));
+            var RatY=this.y = Math.floor(Math.random() * (CanvaHeight-50));
             console.log(this.x,this.y);
             this.width = 50;
             this.height = 50;
@@ -133,15 +135,21 @@
                 ctx.clearRect(this.x, this.y, this.width, this.height);
             },tick*990);
             LeveUp();
-            //if Click on this destroy it and plus 1 score
-            canvas.addEventListener('click', function(event) {
-                if (event.x > this.x && event.x < this.x + this.width && event.y > this.y && event.y < this.y + this.height) {
-                    ctx.clearRect(this.x, this.y, this.width, this.height);
-                    score++;
-                    console.log(score);
-                }
-            });
+            RatsXX=RatX;
+            RatsYY=RatY;
         } 
+        canvas.addEventListener("click", function(event){
+            var x = event.offsetX;
+            var y = event.offsetY;
+            console.log(x,y);
+            if (x>=RatsXX && x<=RatsXX+50 && y>=RatsYY && y<=RatsYY+50){
+                ctx.clearRect(RatsXX,RatsYY,50,50);
+                score++;
+                console.log("Success!");
+                LeveUp();
+            }
+            
+        });
         //every 20score get made tick*2/3
         function LeveUp(){
             if (score%20==0){
