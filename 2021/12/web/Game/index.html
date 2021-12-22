@@ -78,7 +78,7 @@
 <body>
     <!--這是我剛好在測試的其他東西-->
     <ul class="nav-links">
-        <li><a href="#">Score:0</a></li>
+        <li><a id="Score" href="#">Score:0</a></li>
         
         <li><a href="#">一</a></li>
         <li><a href="#">Level</a></li>
@@ -100,7 +100,7 @@
         
         BG.src = "https://img-blog.csdnimg.cn/20200218155014509.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTkwMjkyMw==,size_16,color_FFFFFF,t_70";
         BG.onload = function () {
-            ctx.drawImage(BG, 0, 0, 800, 320);
+            ctx.drawImage(BG, 0, 0, CanvaWidth, CanvaHeight);
         }
         
         var CanvaHeight=document.getElementById("canvas").height;
@@ -159,7 +159,7 @@
                 else{
                     score--;
                 }
-                console.log("Success!");
+                document.getElementById("Score").innerHTML="Score:"+score;
                 LeveUp();
             }
             
