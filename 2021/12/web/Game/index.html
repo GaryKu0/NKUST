@@ -95,7 +95,7 @@
         var level = 1;
         var tick =5;var monsterReady = false;
         var BG = new Image();
-        BG.image = new Image();
+        
         BG.src = "https://img-blog.csdnimg.cn/20200218155014509.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTkwMjkyMw==,size_16,color_FFFFFF,t_70";
         BG.onload = function () {
             ctx.drawImage(BG, 0, 0, 800, 320);
@@ -107,6 +107,7 @@
         var BombImage = new Image();
         BombImage.src = "img/Rat.png";
         var monsterImage = new Image();
+        var addScore=true;
         monsterImage.src = "https://raw.githubusercontent.com/lostdecade/simple_canvas_game/master/images/monster.png";
         function Summon(){
             //genarate a random munber between 1 and 10
@@ -126,6 +127,7 @@
         var RatsXX=0;
         var RatsYY=0;
         function Rats(){
+            addScore=true;
             //create a Rats in the canva random position
             var RatX=this.x = Math.floor(Math.random() * (CanvasWidth-50));
             var RatY=this.y = Math.floor(Math.random() * (CanvaHeight-50));
@@ -149,7 +151,12 @@
             if (x>=RatsXX && x<=RatsXX+50 && y>=RatsYY && y<=RatsYY+50){
                 ctx.clearRect(RatsXX,RatsYY,50,50);
                 ctx.drawImage(BG, 0, 0, 800, 320);
-                score++;
+                if (addScore){
+                    score++;
+                }
+                else{
+                    score--;
+                }
                 console.log("Success!");
                 LeveUp();
             }
@@ -164,6 +171,7 @@
             }
         }
         function Bomb(){
+            addScore=false;
             this.x = Math.floor(Math.random() * (CanvasWidth-50));
             this.y = Math.floor(Math.random() * (CanvaHeight-50));
             console.log(this.x,this.y);
