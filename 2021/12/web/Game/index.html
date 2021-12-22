@@ -3,6 +3,7 @@
 <title>Game</title>
 
 <head>
+    <script src="https://cdn.blobity.dev/by.js?licenseKey=..."></script>
     <style>
         .main {
             position: absolute;
@@ -21,13 +22,16 @@
             text-align: center;
             overflow: hidden;
         }
+
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Poppins', sans-serif;
         }
+
         body {
             /*using system ui font*/
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -36,20 +40,23 @@
             justify-content: center;
             background: whitesmoke;
         }
+
         .nav-links {
             display: flex;
             align-items: center;
             background-color: rgb(99, 99, 99);
-            color:whitesmoke;
+            color: whitesmoke;
             margin-top: 20px;
             padding: 15px 15px;
             border-radius: 12px;
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
         }
+
         .nav-links li {
             list-style: none;
             margin: 0 12px;
         }
+
         .nav-links li a {
             position: relative;
             color: rgb(207, 207, 207);
@@ -58,6 +65,7 @@
             padding: 6px 0;
             text-decoration: none;
         }
+
         .nav-links li a:before {
             content: '';
             position: absolute;
@@ -69,6 +77,7 @@
             border-radius: 12px;
             transition: all 0.4s ease;
         }
+
         .nav-links li a:hover:before {
             width: 100%;
         }
@@ -79,7 +88,7 @@
     <!--這是我剛好在測試的其他東西-->
     <ul class="nav-links">
         <li><a id="Score" href="#">Score:0</a></li>
-        
+
         <li><a href="#">一</a></li>
         <li><a href="#">Level</a></li>
         <li><a href="#">十</a></li>
@@ -95,100 +104,100 @@
         var ctx = canvas.getContext("2d");
         var score = 1;
         var level = 1;
-        var tick =5;var monsterReady = false;
+        var tick = 5; var monsterReady = false;
         var BG = new Image();
-        
+
         BG.src = "https://img-blog.csdnimg.cn/20200218155014509.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTkwMjkyMw==,size_16,color_FFFFFF,t_70";
         BG.onload = function () {
             ctx.drawImage(BG, 0, 0, CanvaWidth, CanvaHeight);
         }
-        
-        var CanvaHeight=document.getElementById("canvas").height;
-        var CanvaWidth=document.getElementById("canvas").width;
-        
+
+        var CanvaHeight = document.getElementById("canvas").height;
+        var CanvaWidth = document.getElementById("canvas").width;
+
         var BombImage = new Image();
         BombImage.src = "img/Rat.png";
         var monsterImage = new Image();
-        var addScore=true;
+        var addScore = true;
         monsterImage.src = "https://raw.githubusercontent.com/lostdecade/simple_canvas_game/master/images/monster.png";
-        function Summon(){
+        function Summon() {
             //genarate a random munber between 1 and 10
             var random = Math.floor(Math.random() * 10) + 1;
             console.log(random);
-            if (random==10){
+            if (random == 10) {
                 //summon Bomb  
                 console.log("Summon Bomb");
                 Bomb();
             }
-            if (random!=10){
+            if (random != 10) {
                 //summon Rats
                 console.log("Summon Rats");
                 Rats();
             }
         }
-        var RatsXX=0;
-        var RatsYY=0;
-        function Rats(){
-            addScore=true;
+        var RatsXX = 0;
+        var RatsYY = 0;
+        function Rats() {
+            addScore = true;
             //create a Rats in the canva random position
-            var RatX=this.x = Math.floor(Math.random() * (CanvaWidth-50));
-            var RatY=this.y = Math.floor(Math.random() * (CanvaHeight-50));
-            console.log(this.x,this.y);
+            var RatX = this.x = Math.floor(Math.random() * (CanvaWidth - 50));
+            var RatY = this.y = Math.floor(Math.random() * (CanvaHeight - 50));
+            console.log(this.x, this.y);
             this.width = 50;
             this.height = 50;
-            ctx.drawImage(monsterImage, this.x, this.y,this.width, this.height);
+            ctx.drawImage(monsterImage, this.x, this.y, this.width, this.height);
             //if this exist over than tick seconds destroy it
-            setTimeout(function(){
+            setTimeout(function () {
                 ctx.clearRect(this.x, this.y, this.width, this.height);
                 ctx.drawImage(BG, 0, 0, CanvaWidth, CanvaHeight);
-            },tick*990);
+            }, tick * 990);
             LeveUp();
-            RatsXX=RatX;
-            RatsYY=RatY;
-        } 
-        canvas.addEventListener("click", function(event){
+            RatsXX = RatX;
+            RatsYY = RatY;
+        }
+        canvas.addEventListener("click", function (event) {
             var x = event.offsetX;
             var y = event.offsetY;
-            console.log(x,y);
-            if (x>=RatsXX && x<=RatsXX+50 && y>=RatsYY && y<=RatsYY+50){
-                ctx.clearRect(RatsXX,RatsYY,50,50);
-                ctx.drawImage(BG, 0, 0, CanvaWidth,CanvaHeight);
-                if (addScore){
+            console.log(x, y);
+            if (x >= RatsXX && x <= RatsXX + 50 && y >= RatsYY && y <= RatsYY + 50) {
+                ctx.clearRect(RatsXX, RatsYY, 50, 50);
+                ctx.drawImage(BG, 0, 0, CanvaWidth, CanvaHeight);
+                if (addScore) {
                     score++;
                 }
-                else{
+                else {
                     score--;
                 }
-                document.getElementById("Score").innerHTML="Score:"+score;
+                document.getElementById("Score").innerHTML = "Score:" + score;
                 LeveUp();
             }
-            
+
         });
         //every 20score get made tick*2/3
-        function LeveUp(){
-            if (score%20==0){
-                tick=tick*2/3;
+        function LeveUp() {
+            if (score % 20 == 0) {
+                tick = tick * 2 / 3;
                 level++;
                 console.log(tick);
             }
         }
-        function Bomb(){
-            addScore=false;
-            this.x = Math.floor(Math.random() * (CanvaWidth-50));
-            this.y = Math.floor(Math.random() * (CanvaHeight-50));
-            console.log(this.x,this.y);
+        function Bomb() {
+            addScore = false;
+            this.x = Math.floor(Math.random() * (CanvaWidth - 50));
+            this.y = Math.floor(Math.random() * (CanvaHeight - 50));
+            console.log(this.x, this.y);
             this.width = 50;
             this.height = 50;
-            ctx.drawImage(BombImage, this.x, this.y,this.width, this.height);
+            ctx.drawImage(BombImage, this.x, this.y, this.width, this.height);
             //if this exist over than tick seconds destroy it
-            setTimeout(function(){
+            setTimeout(function () {
                 ctx.clearRect(this.x, this.y, this.width, this.height);
-            },tick*990);
+            }, tick * 990);
         }
         //summon again after 5 seconds
-        setInterval(function(){
+        setInterval(function () {
             Summon();
-        },tick*1000);
+        }, tick * 1000);
         //when website loaded run summon();
         window.onload = Summon();
         //print score on the top left of canvas
