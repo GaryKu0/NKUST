@@ -34,7 +34,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: #1d1c1c;
+            background: whitesmoke;
         }
         .nav-links {
             display: flex;
@@ -88,6 +88,7 @@
         <canvas id="canvas" width="800" height="320"></canvas>
     </div>
     <script>
+        document.body.style.cursor = "url(http://bringerp.free.fr/Files/RotMG/cursor.gif), pointer"
         var canvas = document.getElementById("canvas");
         var ctx = canvas.getContext("2d");
         var score = 1;
@@ -135,6 +136,7 @@
             //if this exist over than tick seconds destroy it
             setTimeout(function(){
                 ctx.clearRect(this.x, this.y, this.width, this.height);
+                ctx.drawImage(BG, 0, 0, 800, 320);
             },tick*990);
             LeveUp();
             RatsXX=RatX;
@@ -146,6 +148,7 @@
             console.log(x,y);
             if (x>=RatsXX && x<=RatsXX+50 && y>=RatsYY && y<=RatsYY+50){
                 ctx.clearRect(RatsXX,RatsYY,50,50);
+                ctx.drawImage(BG, 0, 0, 800, 320);
                 score++;
                 console.log("Success!");
                 LeveUp();
