@@ -10,8 +10,8 @@
             left: 50%;
             -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
-            width: 800px;
-            height: 320px;
+            width: 1000px;
+            height: 600px;
             border-radius: 10px;
             box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
             background: white;
@@ -85,7 +85,7 @@
     </ul>
     <!--分隔線-->
     <div class="main">
-        <canvas id="canvas" width="800" height="320"></canvas>
+        <canvas id="canvas" width="1000" height="600"></canvas>
     </div>
     <script>
         document.body.style.cursor = "url(http://bringerp.free.fr/Files/RotMG/cursor.gif), pointer"
@@ -102,7 +102,7 @@
         }
         
         var CanvaHeight=document.getElementById("canvas").height;
-        var CanvasWidth=document.getElementById("canvas").width;
+        var CanvaWidth=document.getElementById("canvas").width;
         
         var BombImage = new Image();
         BombImage.src = "img/Rat.png";
@@ -129,7 +129,7 @@
         function Rats(){
             addScore=true;
             //create a Rats in the canva random position
-            var RatX=this.x = Math.floor(Math.random() * (CanvasWidth-50));
+            var RatX=this.x = Math.floor(Math.random() * (CanvaWidth-50));
             var RatY=this.y = Math.floor(Math.random() * (CanvaHeight-50));
             console.log(this.x,this.y);
             this.width = 50;
@@ -138,7 +138,7 @@
             //if this exist over than tick seconds destroy it
             setTimeout(function(){
                 ctx.clearRect(this.x, this.y, this.width, this.height);
-                ctx.drawImage(BG, 0, 0, 800, 320);
+                ctx.drawImage(BG, 0, 0, CanvaWidth, CanvaHeight);
             },tick*990);
             LeveUp();
             RatsXX=RatX;
@@ -150,7 +150,7 @@
             console.log(x,y);
             if (x>=RatsXX && x<=RatsXX+50 && y>=RatsYY && y<=RatsYY+50){
                 ctx.clearRect(RatsXX,RatsYY,50,50);
-                ctx.drawImage(BG, 0, 0, 800, 320);
+                ctx.drawImage(BG, 0, 0, CanvaWidth,CanvaHeight);
                 if (addScore){
                     score++;
                 }
@@ -172,7 +172,7 @@
         }
         function Bomb(){
             addScore=false;
-            this.x = Math.floor(Math.random() * (CanvasWidth-50));
+            this.x = Math.floor(Math.random() * (CanvaWidth-50));
             this.y = Math.floor(Math.random() * (CanvaHeight-50));
             console.log(this.x,this.y);
             this.width = 50;
