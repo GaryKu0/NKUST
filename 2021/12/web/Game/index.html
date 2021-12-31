@@ -5,8 +5,50 @@
 <head>
     <script src="https://cdn.blobity.dev/by.js?licenseKey=..."></script>
     <style>
+        .Mountain {
+            /*fit the screen and stick at the bottom*/
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 70%;
+            z-index: -2;
+        }
+
+        .alien-1 {
+            /*fit the screen and stick at the bottom left*/
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            display: block;
+
+        }
+
+        @media screen and (max-width: 1100px) {
+            .alien-1 {
+                display: none;
+            }
+
+            .Mountain {
+                height: 50%;
+            }
+        }
+
+        .alien-2 {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+
+        .star {
+            position: absolute;
+            /*fit screen and display at middle*/
+            margin-top: 100px;
+        }
+    </style>
+    <style>
         .main {
-            display:none;
+            display: none;
             position: absolute;
             top: 50%;
             left: 50%;
@@ -39,7 +81,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: whitesmoke;
+            background: rgb(37, 92, 175);
         }
 
         .nav-links {
@@ -93,8 +135,8 @@
             border-radius: 10px;
             width: 500px;
             padding: 5px;
-            padding-top:25px;
-            padding-bottom:25px;
+            padding-top: 25px;
+            padding-bottom: 25px;
             box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
             background: white;
             background-color: whitesmoke;
@@ -105,92 +147,111 @@
             overflow-x: hidden;
             height: 350px;
         }
-        .input-group{
+
+        .input-group {
             margin: 0 auto;
             text-align: center;
-            width:400px;
+            width: 400px;
         }
+
         .input-group-type {
             background: transparent;
             width: 390px;
             border: none;
             background: none;
             outline: none;
-            color:black;
-            margin:0 auto;
-            padding-left:10px;
-            
-        }
-        .input-group-container {
-            padding:4px;
-            background-color:rgba(90, 90, 90, 0.5);
-            border-radius:5px;
-            width:400px;
-            margin-bottom:5px;
-            margin-top:10px;
-            opacity:0.8;
-        }
-        .LoginForm{
+            color: black;
             margin: 0 auto;
-            text-align: center; 
+            padding-left: 10px;
+
         }
-        .LoginButton{
-            padding:5px;
-            border-radius:5px;
+
+        .input-group-container {
+            padding: 4px;
+            background-color: rgba(90, 90, 90, 0.5);
+            border-radius: 5px;
+            width: 400px;
+            margin-bottom: 5px;
+            margin-top: 10px;
+            opacity: 0.8;
+        }
+
+        .LoginForm {
+            margin: 0 auto;
             text-align: center;
-            width:70px;
+        }
+
+        .LoginButton {
+            padding: 5px;
+            border-radius: 5px;
+            text-align: center;
+            width: 70px;
             background-color: whitesmoke;
-            margin:0px;
-            float:right;
+            margin: 0px;
+            float: right;
             transition-duration: 0.5s;
             box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0);
-            margin-top:2px;
+            margin-top: 2px;
         }
-        .LoginButton:hover{
+
+        .LoginButton:hover {
             box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
             background-color: #1ea1f3;
-            
+
         }
+
         .LoginText {
-            color:#1ea1f3;
+            color: #1ea1f3;
             font-family: sans-serif;
             font-size: 15px;
             transition-duration: 0.3s;
-            
+
         }
-        .LoginButton:hover>.LoginText{
-            color:whitesmoke;
+
+        .LoginButton:hover>.LoginText {
+            color: whitesmoke;
         }
-        body{
-            font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
         }
-        .navigationBar{
+
+        .navigationBar {
             background-color: rgba(199, 199, 199, 1);
             padding-top: 20px;
-            max-width:600px;
+            max-width: 600px;
             display: flex;
             text-align: center;
-            border-radius:8px;
-            margin:0 auto;
-            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.6);  
-            z-index:100000;      
+            border-radius: 8px;
+            margin: 0 auto;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.6);
+            z-index: 100000;
         }
-        .navigationBar a{
-            font-weight:bold;
-            font-size:16pt;
-            flex:1;
-            transform:translate(0px,-10px);
-            transition-duration:0.3s;
-            text-decoration:none;
+
+        .navigationBar a {
+            font-weight: bold;
+            font-size: 16pt;
+            flex: 1;
+            transform: translate(0px, -10px);
+            transition-duration: 0.3s;
+            text-decoration: none;
         }
-        .navigationBar a:hover{
-            color:sandybrown
+
+        .navigationBar a:hover {
+            color: sandybrown
         }
     </style>
+
 </head>
 
 <body>
-
+    <div>
+        <img src="https://i.imgur.com/kbauGem.png" class="Mountain" alt="">
+        <img src="https://i.imgur.com/78NTUBh.png" class="alien-1" alt="">
+        <img src="https://i.imgur.com/bqXW7Xi.png" class="alien-2" alt="">
+        <img src="https://i.imgur.com/gT8NhCZ.png" class="star" alt="">
+    </div>
     <!--這是我剛好在測試的其他東西-->
     <ul class="nav-links">
         <li><a id="Score" href="#">Score:0</a></li>
@@ -200,11 +261,14 @@
         <li><a href="#" id="gameStart" onclick="gameStart()">Start</a></li>
     </ul>
     <!--分隔線-->
-    <div class="main1" id="main1" >
+    <div class="main1" id="main1">
         <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-        <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_ibrxdnnn.json"  background="transparent"  speed="1"  style="width: 500px; height: 300px; transform: translate(0px, -75px);"  loop  autoplay></lottie-player>
+        <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_ibrxdnnn.json" background="transparent"
+            speed="1" style="width: 500px; height: 300px; transform: translate(0px, -75px);" loop autoplay>
+        </lottie-player>
         <div class="LoginForm" style="transform: translate(0px, -150px);" id="loginForm">
-            <a style="color:gray; font-size:8px; text-decoration:none">Please Enter Your Username and password to coninue.</a>
+            <a style="color:gray; font-size:8px; text-decoration:none">Please Enter Your Username and password to
+                coninue.</a>
             <div class="input-group">
                 <div class="input-group-container">
                     <input type="text" id="account" class="input-group-type" placeholder=" Enter Your username">
@@ -213,7 +277,8 @@
                     <input type="password" id="password" class="input-group-type" placeholder=" Enter Your password">
                 </div>
                 <div class="LoginButton">
-                    <a href="#" id="LoginText" class="LoginText" onclick="Login()" style="text-decoration:none; font-weight:bold;">Login</a>
+                    <a href="#" id="LoginText" class="LoginText" onclick="Login()"
+                        style="text-decoration:none; font-weight:bold;">Login</a>
                 </div>
             </div>
         </div>
@@ -299,11 +364,11 @@
             }
 
         });
-        var doubleCheck=0
+        var doubleCheck = 0
         //every 20score get made tick*2/3
         function LeveUp() {
-            if (score % 20 == 0&&doubleCheck!=score) {
-                doubleCheck=score
+            if (score % 20 == 0 && doubleCheck != score) {
+                doubleCheck = score
                 tick = tick * 2 / 3;
                 level++;
                 document.getElementById("level").innerHTML = "Tick:" + level;
@@ -342,7 +407,7 @@
 
     </script>
     <script>
-        function Login(){
+        function Login() {
             var username = document.getElementById("account").value;
             var password = document.getElementById("password").value;
             if (username == "admin" && password == "admin") {
