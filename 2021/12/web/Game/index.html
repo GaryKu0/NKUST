@@ -85,7 +85,7 @@
         }
 
         .nav-links {
-            display: flex;
+            display: none;
             align-items: center;
             background-color: rgb(99, 99, 99);
             color: whitesmoke;
@@ -253,7 +253,7 @@
         <img src="https://i.imgur.com/gT8NhCZ.png" class="star" alt="">
     </div>
     <!--這是我剛好在測試的其他東西-->
-    <ul class="nav-links">
+    <ul class="nav-links" id="nav">
         <li><a id="Score" href="#">Score:0</a></li>
         <li><a href="#" onclick="tick--;document.getElementById('level').innerHTML='Tick:'+tick;">一</a></li>
         <li><a href="#" id="level">Refresh Tick</a></li>
@@ -287,6 +287,17 @@
         <canvas id="canvas" width="1000" height="600"></canvas>
     </div>
     <script>
+        document.getElementById("account").addEventListener("keyup", function (event) {
+            if (event.keyCode === 13) {
+                event.preventDefault();
+                document.getElementById("password").focus();
+            }
+        });
+        document.getElementById('password').addEventListener('keydown', function (e) {
+            if (e.keyCode == 13) {
+                Login();
+            }
+        });
         document.body.style.cursor = "url(http://bringerp.free.fr/Files/RotMG/cursor.gif), pointer"
         var canvas = document.getElementById("canvas");
         var ctx = canvas.getContext("2d");
@@ -414,6 +425,7 @@
                 document.getElementById("GameCanva").style.display = "block";
                 alert("登入成功 歡迎！");
                 document.getElementById("main1").style.display = "none";
+                document.getElementById("nav").style.display = "flex";
             }
             else {
                 alert("Wrong username or password");
