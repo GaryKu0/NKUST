@@ -176,9 +176,11 @@
             }
 
         });
+        var doubleCheck=0
         //every 20score get made tick*2/3
         function LeveUp() {
-            if (score % 20 == 0) {
+            if (score % 20 == 0&&doubleCheck!=score) {
+                doubleCheck=score
                 tick = tick * 2 / 3;
                 level++;
                 document.getElementById("level").innerHTML = "Tick:" + level;
