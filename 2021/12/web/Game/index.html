@@ -410,7 +410,7 @@
             if (GameIsStarted == false) {
                 document.getElementById("gameStart").innerHTML = "Stop";
                 GameIsStarted = true;
-                TimeLeft=30;
+                TimeLeft=60;
             }
             else if (GameIsStarted == true) {
                 console.log(document.getElementById("gameStart").innerHTML)
@@ -424,9 +424,6 @@
             if(GameIsStarted == true){
                 document.getElementById("time").innerHTML = "Time:" + TimeLeft + "s";
                 TimeLeft--;
-            }
-            else{
-                document.getElementById("time").innerHTML = "Time:" + 0 + "s";
             }
             if (TimeLeft==-1) {
                 document.getElementById("time").innerHTML = "Time:" + 0 + "s";
