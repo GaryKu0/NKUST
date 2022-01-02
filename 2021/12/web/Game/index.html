@@ -93,6 +93,7 @@
             padding: 15px 15px;
             border-radius: 12px;
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            z-index: 200000;
         }
 
         .nav-links li {
@@ -255,6 +256,7 @@
     <!--這是我剛好在測試的其他東西-->
     <ul class="nav-links" id="nav">
         <li><a id="Score" href="#">Score:0</a></li>
+        <li><a id="time" href="#">Time:0</a></li>
         <li><a href="#" onclick="tick--;document.getElementById('level').innerHTML='Tick:'+tick;">一</a></li>
         <li><a href="#" id="level">Refresh Tick</a></li>
         <li><a href="#" onclick="tick++;document.getElementById('level').innerHTML='Tick:'+tick;">十</a></li>
@@ -407,6 +409,7 @@
             if (GameIsStarted == false) {
                 document.getElementById("gameStart").innerHTML = "Stop";
                 GameIsStarted = true;
+                TimeLeft=30;
             }
             else if (GameIsStarted == true) {
                 console.log(document.getElementById("gameStart").innerHTML)
@@ -415,7 +418,21 @@
             }
         }
         var timer = setInterval(Summon, tick * 1000);
-
+        var TimeLeft=30;
+        var countdown =setInterval(function(){
+            if(GameIsStarted == true){
+                document.getElementById("time").innerHTML = "Time:" + TimeLeft + "s";
+                TimeLeft--;
+            }
+            else{
+                document.getElementById("time").innerHTML = "Time:" + 0 + "s";
+            }
+            if (TimeLeft==-1) {
+                document.getElementById("time").innerHTML = "Time:" + 0 + "s";
+                document.getElementById("gameStart").innerHTML = "Start";
+                GameIsStarted = false;
+            }
+        },1000);
     </script>
     <script>
         function Login() {
