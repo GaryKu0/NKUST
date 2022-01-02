@@ -382,7 +382,8 @@
         function LeveUp() {
             if (score % 20 == 0 && doubleCheck != score) {
                 doubleCheck = score
-                tick = tick * 2 / 3;
+                if (ticK>1)
+                    tick = tick -1;
                 level++;
                 document.getElementById("level").innerHTML = "Tick:" + level;
             }
