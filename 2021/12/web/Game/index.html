@@ -261,7 +261,6 @@
         <li><a href="#" id="level">Refresh Tick</a></li>
         <li><a href="#" onclick="tick++;document.getElementById('level').innerHTML='Tick:'+tick;">十</a></li>
         <li><a href="#" id="gameStart" onclick="gameStart()">Start</a></li>
-        <li><a href="#" id="gameStop" onclick="gameStop()">Stop</a></li>
     </ul>
     <!--分隔線-->
     <div class="main1" id="main1">
@@ -418,11 +417,6 @@
                 document.getElementById("gameStart").innerHTML = "Start";
                 GameIsStarted = false;
             }
-        }
-        function gameStop(){
-            GameIsStarted=false;
-            document.getElementById("time").innerHTML = "Time: " +0+"s";
-            document.getElementById("gameStart").innerHTML = "Start";
         }
         var timer = setInterval(Summon, tick * 1000);
         var TimeLeft=60;
