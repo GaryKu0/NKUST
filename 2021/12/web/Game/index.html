@@ -330,12 +330,12 @@
             if (GameIsStarted == true) {
                 var random = Math.floor(Math.random() * 10) + 1;//隨機數1~10
                 console.log(random);
-                if (random == 10 ||random == 5) { //20%機率出現炸彈
+                if (random == 10 || random == 5) { //20%機率出現炸彈
                     //summon Bomb  
                     console.log("Summon Bomb");
                     Bomb();
                 }
-                if (random != 10) {
+                if (random != 10 || random != 5) { //80%出現地鼠
                     //summon Rats
                     console.log("Summon Rats");
                     Rats();
@@ -390,10 +390,10 @@
         function LeveUp() {
             if (score % 20 == 0 && doubleCheck != score) {
                 doubleCheck = score
-                if (ticK>0)
-                    tick = tick -0.5;
+                if (ticK > 0)
+                    tick = tick - 0.5;
                 level++;
-                if (level <0)
+                if (level < 0)
                     level = 0.5;
                 document.getElementById("level").innerHTML = "Tick:" + level;
             }
@@ -422,8 +422,8 @@
             if (GameIsStarted == false) {
                 document.getElementById("gameStart").innerHTML = "End";
                 GameIsStarted = true;
-                TimeLeft=60;
-                score =0;
+                TimeLeft = 60;
+                score = 0;
             }
             else if (GameIsStarted == true) {
                 console.log(document.getElementById("gameStart").innerHTML)
@@ -432,18 +432,18 @@
             }
         }
         var timer = setInterval(Summon, tick * 1000);
-        var TimeLeft=60;
-        var countdown =setInterval(function(){
-            if(GameIsStarted == true){
+        var TimeLeft = 60;
+        var countdown = setInterval(function () {
+            if (GameIsStarted == true) {
                 document.getElementById("time").innerHTML = "Time:" + TimeLeft + "s";
                 TimeLeft--;
             }
-            if (TimeLeft==-1) {
+            if (TimeLeft == -1) {
                 document.getElementById("time").innerHTML = "Time:" + 0 + "s";
                 document.getElementById("gameStart").innerHTML = "Start";
                 GameIsStarted = false;
             }
-        },1000);
+        }, 1000);
     </script>
     <script>
         function Login() {
