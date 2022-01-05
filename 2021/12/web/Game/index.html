@@ -50,6 +50,17 @@
             /*fit screen and display at middle*/
             margin-top: 100px;
         }
+
+        .notification {
+            position: absolute;
+            bottom: 5px;
+            left: 5px;
+            z-index: 5678767876787678;
+            border-radius: 10px;
+            margin-top: 10px;
+            margin-right: 10px;
+            opacity: 0.8;
+        }
     </style>
     <style>
         .main {
@@ -268,6 +279,18 @@
         <li><a href="#" id="gameStart" onclick="gameStart()">Start</a></li>
     </ul>
     <!--分隔線-->
+    <div class="notification">
+        <a style="display: flex;text-decoration:none"
+            href="https://raw.githubusercontent.com/GaryKu0/NKUST/main/2021/12/web/Game/index.html">
+            <img style="flex:1"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2048px-Octicons-mark-github.svg.png"
+                height="60px" width="60px" alt="">
+            <div style="margin-left: 10px;flex:2;">
+                <h1 style="font-size: 30px; color:black;opacity:0.8;">Github</h1>
+                <h2 style="font-size: 20px; color:black;opacity:0.8;">source code</h2>
+            </div>
+        </a>
+    </div>
     <div class="main1" id="main1">
         <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
         <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_ibrxdnnn.json" background="transparent"
@@ -398,7 +421,7 @@
                 if (ticK > 0)
                     tick = tick - 0.5;
                 level++;
-                if (level < 0)
+                if (level <= 0)
                     level = 0.5;
                 document.getElementById("level").innerHTML = "Tick:" + level;
             }
