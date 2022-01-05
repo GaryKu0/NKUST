@@ -305,7 +305,7 @@
         var ctx = canvas.getContext("2d");
         var score = 1;
         var level = 1;
-        var tick = 2; var monsterReady = false;
+        var tick = 1.5; var monsterReady = false;
         var BG = new Image();
 
         BG.src = "https://img-blog.csdnimg.cn/20200218155014509.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTkwMjkyMw==,size_16,color_FFFFFF,t_70";
@@ -382,9 +382,11 @@
         function LeveUp() {
             if (score % 20 == 0 && doubleCheck != score) {
                 doubleCheck = score
-                if (ticK>1)
-                    tick = tick -1;
+                if (ticK>0)
+                    tick = tick -0.5;
                 level++;
+                if (level <0)
+                    level = 0.5;
                 document.getElementById("level").innerHTML = "Tick:" + level;
             }
         }
