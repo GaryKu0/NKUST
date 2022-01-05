@@ -289,43 +289,48 @@
         <canvas id="canvas" width="1000" height="600"></canvas>
     </div>
     <script>
+        //按下enter自動切換到密碼欄位
         document.getElementById("account").addEventListener("keyup", function (event) {
             if (event.keyCode === 13) {
                 event.preventDefault();
                 document.getElementById("password").focus();
             }
         });
+        //在密碼欄位按下enter自動登入
         document.getElementById('password').addEventListener('keydown', function (e) {
             if (e.keyCode == 13) {
                 Login();
             }
         });
+        //改鼠標圖案
         document.body.style.cursor = "url(http://bringerp.free.fr/Files/RotMG/cursor.gif), pointer"
+        //基本的變數
         var canvas = document.getElementById("canvas");
         var ctx = canvas.getContext("2d");
         var score = 1;
         var level = 1;
         var tick = 1.5; var monsterReady = false;
+        //背景
         var BG = new Image();
-
         BG.src = "https://img-blog.csdnimg.cn/20200218155014509.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTkwMjkyMw==,size_16,color_FFFFFF,t_70";
         BG.onload = function () {
             ctx.drawImage(BG, 0, 0, CanvaWidth, CanvaHeight);
         }
-
         var CanvaHeight = document.getElementById("canvas").height;
         var CanvaWidth = document.getElementById("canvas").width;
+        //炸彈圖案
         var BombImage = new Image();
         BombImage.src = "https://i.imgur.com/Jql4CAA.png";
         var monsterImage = new Image();
         var addScore = true;
+        //地鼠圖案
         monsterImage.src = "https://i.imgur.com/a7SedWT.png";
         function Summon() {
+            //假如start已經按下
             if (GameIsStarted == true) {
-                //genarate a random munber between 1 and 10
-                var random = Math.floor(Math.random() * 10) + 1;
+                var random = Math.floor(Math.random() * 10) + 1;//隨機數1~10
                 console.log(random);
-                if (random == 10) {
+                if (random == 10 ||random == 5) { //20%機率出現炸彈
                     //summon Bomb  
                     console.log("Summon Bomb");
                     Bomb();
@@ -344,30 +349,33 @@
         function Rats() {
             addScore = true;
             //create a Rats in the canva random position
-            var RatX = this.x = Math.floor(Math.random() * (CanvaWidth - 50));
-            var RatY = this.y = Math.floor(Math.random() * (CanvaHeight - 50));
+            var RatX = this.x = Math.floor(Math.random() * (CanvaWidth - 50)); //隨機產生X座標
+            var RatY = this.y = Math.floor(Math.random() * (CanvaHeight - 50));//隨機產生Y座標
             console.log(this.x, this.y);
             this.width = 50;
             this.height = 50;
-            ctx.drawImage(monsterImage, this.x, this.y, this.width, this.height);
+            ctx.drawImage(monsterImage, this.x, this.y, this.width, this.height);//把地鼠畫在canva上
             //if this exist over than tick seconds destroy it
             setTimeout(function () {
                 ctx.clearRect(this.x, this.y, this.width, this.height);
                 ctx.drawImage(BG, 0, 0, CanvaWidth, CanvaHeight);
-            }, tick * 990);
-            LeveUp();
+            }, tick * 990); //在tick秒後消失
+            LeveUp();//檢測分數是否達標
             RatsXX = RatX;
             RatsYY = RatY;
+            AlreadyAddScore = false;
         }
-        canvas.addEventListener("click", function (event) {
+        var AlreadyAddScore = false;
+        canvas.addEventListener("click", function (event) { //檢測是否有按下滑鼠
             var x = event.offsetX;
             var y = event.offsetY;
             console.log(x, y);
             if (x >= RatsXX && x <= RatsXX + 50 && y >= RatsYY && y <= RatsYY + 50) {
                 ctx.clearRect(RatsXX, RatsYY, 50, 50);
                 ctx.drawImage(BG, 0, 0, CanvaWidth, CanvaHeight);
-                if (addScore) {
+                if (addScore & AlreadyAddScore == false) {
                     score++;
+                    AlreadyAddScore = true;
                 }
                 else {
                     score--;
@@ -405,6 +413,8 @@
                 ctx.clearRect(this.x, this.y, this.width, this.height);
                 ctx.drawImage(BG, 0, 0, CanvaWidth, CanvaHeight);
             }, tick * 990);
+            AlreadyAddScore = false;
+
         }
         var GameIsStarted = false;
         //summon again after 5 seconds
