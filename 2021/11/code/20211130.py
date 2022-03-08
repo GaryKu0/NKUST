@@ -13,3 +13,8 @@ print("本班總成績:"+str(total)+",平均為"+str(total/len(scores))+"分")
 # print all value in scores
 print("全部成績:", scores)
 
+
+#calculate BMI
+height=float(input("請輸入身高(公分):"))
+weight=float(input("請輸入體重(公斤):"))
+
