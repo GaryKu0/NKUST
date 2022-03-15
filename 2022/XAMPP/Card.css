@@ -1,0 +1,11 @@
+.card {
+    max-width: 500px;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 15px;
+    background-color: rgb(236, 236, 236);
+    opacity: 0.9;
+    box-shadow: 1px 1px 7px 0 rgb(58, 57, 57);
+    font-weight: 400;
+    text-align: center;
+}
