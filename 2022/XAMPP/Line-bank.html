@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LINE</title>
+    <meta viewport="width=device-width, initial-scale=1">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap');
+
+        body {
+            background-color: #17B486;
+            height: 100%;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        }
+
+        /* Glassmorphism card effect */
+        .card {
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            background-color: rgba(17, 25, 40, 0.75);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.125);
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .input-field {
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.125);
+            margin: 0 auto;
+            text-align: center;
+            max-width: 500px;
+            padding-left: 10px;
+            padding-right: 10px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            margin-bottom: 20px;
+            background-color: whitesmoke;
+        }
+
+        .input-style {
+            background: transparent;
+            width: 8vw;
+            border: none;
+            background: none;
+            outline: none;
+            color: black;
+            margin: 0 auto;
+            padding-left: 10px;
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .container {
+            margin: 0px auto;
+            text-align: center;
+            perspective: 600px;
+        }
+
+        button {
+            font-size: 30px;
+            font-family: Raleway;
+            line-height: 30px;
+            padding: .618em 1em;
+            border-radius: 10px 10px 12px 12px;
+            box-shadow:
+                0px 8px 0px 0px #2980b9,
+                /* button thickness */
+                0px 0 20px rgba(255, 255, 255, .2) inset,
+                /* inner glow */
+                2px 30px 0px rgba(255, 255, 255, .1) inset,
+                /* sublte reflection */
+                5px 15px 30px -10px #000;
+            /* dark shadow underneath */
+            border: 1px solid #2980b9;
+            cursor: pointer;
+            background: #3498db;
+            color: #ecf0f1;
+            text-shadow: 1px 1px 1px #34495e;
+            transform: rotateX(5deg);
+            margin: 10px 10px;
+            width: 200px;
+            text-align: left;
+        }
+
+        button i {
+            padding-right: 17px;
+            transform: scale(1.1) translate(0, -1px);
+        }
+
+        button:hover {
+            margin-top: 15px;
+            margin-bottom: 5px;
+            box-shadow:
+                0px 5px 0px 0px #2980b9,
+                /* button thickness */
+                0px 0 50px rgba(134, 243, 255, 1) inset,
+                /* inner glow */
+                5px 28px 0px rgba(255, 255, 255, .15) inset,
+                /* sublte reflection */
+                0px 0px 30px rgba(134, 243, 255, .2),
+                /* outer glow */
+                5px 15px 30px -10px #000;
+            /* dark shadow underneath */
+            color: #fff;
+            filter: saturate(1.5);
+        }
+
+        button:hover i {
+            transform: rotate(-12deg) translate(1px, -3px) scale(1.2);
+        }
+
+        button:active {
+            margin-top: 18px;
+            margin-bottom: 2px;
+            box-shadow:
+                0px 2px 0px 0px #2980b9,
+                /* button thickness */
+                0px 0 100px 10px rgba(134, 243, 255, 1) inset,
+                /* inner glow */
+                5px 25px 0px rgba(255, 255, 255, .1) inset,
+                /* sublte reflection */
+                0px 0px 30px rgba(134, 243, 255, .5),
+                /* outer glow */
+                5px 15px 30px -10px #000;
+            /* dark shadow underneath */
+            filter: saturate(1.7);
+        }
+
+        button:active i {
+            transform: rotate(-22deg) translate(2px, -5px) scale(1.3);
+        }
+    </style>
+</head>
+<!--<script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>-->
+
+<body>
+    <!-- 轉帳金額：<input id="amount"><br />
+    內容：<input id="content" value="愚人節快樂" maxlength="100"><br />
+    請勿輸入 # 以及 &，顯示不出來<br /> -->
+
+    <!-- <div class="input-field inline">
+        <input id="content" maxlength="100">
+        <label for="content">訊息</label>
+    </div> -->
+
+    <!-- <button type="button" onclick="sendFlex()">確認送出</button> -->
+    <div class="card">
+        <div class="row">
+            <h1 style="color:whitesmoke;">Line Pay Prank</h1>
+            <img src="https://cpok.tw/wp-content/uploads/2020/10/line-pay-1.png"
+                style="border:0px solid; border-radius:10px; width:50px; height:50px; margin-bottom:5px;">
+            <form class="">
+                <div class="row">
+                    <div class="input-field">
+                        <label for="amount">金額:</label>
+                        <input class="input-style" id="amount" type="text">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field">
+                        <label for="content">訊息:</label>
+                        <input class="input-style" id="content" maxlength="100" type="text">
+                    </div>
+                </div>
+                <script src="https://kit.fontawesome.com/ce88b0f6fd.js" crossorigin="anonymous"></script>
+                <div class="container" style="padding-bottom:20px;">
+                    <button onclick="sendFlex()" ;>
+                        <i class="fas fa-check"></i>
+                        Send
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+</body>
+
+<script>
+    const liffid = '1655764850-M9wz8qmW";
+    var name = "";
+
+    function initializeLiff() {
+        liff
+            .init({
+                liffId: liffid
+            })
+            .then(() => {
+                if (!liff.isLoggedIn()) {
+                    liff.login();
+                }
+                if (liff.isLoggedIn()) {
+                    liff
+                        .getProfile()
+                        .then((profile) => {
+                            name = profile.displayName;
+                        })
+                        .catch((err) => {
+                            console.log("error", err);
+                        });
+                }
+            })
+            .catch((err) => {
+                console.log('liff init fail');
+                swal("初始化失敗", "頁面初始化失敗，請重新執行", "error").then(() => {
+                    liff.closeWindow();
+                });
+            });
+    }
+
+    function numberWithCommas(x) {
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
+    function sendFlex() {
+        const amount = numberWithCommas(document.getElementById("amount").value);
+        const content = document.getElementById("content").value;
+        const altText = "已收到NT$ " + amount + "的轉帳。";
+        const uri = "https://liff.line.me/1655764850-M9wz8qmW/send-message?type=text&content=" + encodeURI(content);
+        var flex = {
+            "type": "bubble",
+            "hero": {
+                "type": "image",
+                "url": "https://i.imgur.com/7Ofh0aU.png",
+                "size": "full",
+                "aspectRatio": "20:13",
+                "aspectMode": "cover",
+                "action": {
+                    "type": "uri",
+                    "uri": uri
+                }
+            },
+            "body": {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                    {
+                        "type": "text",
+                        "text": "LINE Pay",
+                        "weight": "bold",
+                        "size": "lg",
+                        "offsetTop": "-5px"
+                    },
+                    {
+                        "type": "box",
+                        "layout": "vertical",
+                        "margin": "lg",
+                        "spacing": "sm",
+                        "contents": [
+                            {
+                                "type": "text",
+                                "text": "您已收到NT$ " + amount + "。（來自" + name + "）",
+                                "size": "sm"
+                            },
+                            {
+                                "type": "button",
+                                "action": {
+                                    "type": "uri",
+                                    "label": "瞭解更多",
+                                    "uri": uri
+                                },
+                                "height": "sm",
+                                "style": "secondary",
+                                "color": "#8fdf81",
+                                "margin": "lg"
+                            }
+                        ],
+                        "offsetTop": "-10px"
+                    },
+                    {
+                        "type": "separator",
+                        "color": "#90da87"
+                    }
+                ],
+                "action": {
+                    "type": "uri",
+                    "uri": uri
+                }
+            },
+            "footer": {
+                "type": "box",
+                "layout": "horizontal",
+                "contents": [
+                    {
+                        "type": "image",
+                        "url": "https://i.imgur.com/L0IgeXO.png",
+                        "size": "xxs",
+                        "align": "start",
+                        "margin": "sm",
+                        "flex": 1
+                    },
+                    {
+                        "type": "text",
+                        "text": "LINE Pay",
+                        "flex": 13,
+                        "margin": "md"
+                    }
+                ],
+                "offsetTop": "-5px",
+                "action": {
+                    "type": "uri",
+                    "uri": uri
+                }
+            },
+            "styles": {
+                "body": {
+                    "backgroundColor": "#9de693"
+                },
+                "footer": {
+                    "backgroundColor": "#9de693"
+                }
+            }
+        }
+
+        if (liff.isApiAvailable('shareTargetPicker')) {
+            liff.shareTargetPicker(
+                [
+                    {
+                        "type": "flex",
+                        "altText": altText,
+                        "contents": flex,
+                    }
+                ],
+                {
+                    isMultiple: true,
+                }
+            )
+                .then(function (res) {
+                    if (res) {
+                        swal("發送訊息成功", "", "success").then(() => {
+                            liff.closeWindow();
+                        });
+                    }
+                }).catch(function (error) {
+                    console.log('something wrong happen')
+                    swal("發送訊息失敗", "可能是訊息太長或其他不明原因", "error").then(() => {
+                        liff.closeWindow();
+                    });
+                })
+        } else {
+            swal("版本過低", "您的LINE版本過低，不支持此功能，幫QQ", "error").then(() => {
+                liff.closeWindow();
+            });
+        }
+    }
+
+    //使用 LIFF_ID 初始化 LIFF 應用
+    initializeLiff();
+</script>
+</html>
