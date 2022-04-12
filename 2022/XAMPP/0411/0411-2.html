@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="https://sususu.su/css/cheat.css" type="text/css">
+    <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
+    <title>POS</title>
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧙‍♂️</text></svg>">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+        @font-face {
+            font-family: 'zpix';
+            src: url('zpix.ttf');
+        }
+
+        .pixel {
+            font-family: 'Press Start 2P', 'zpix', cursive;
+        }
+
+        body {
+            height: 100vh;
+            background-color: #3c3d3d;
+            background-image: radial-gradient(at 47% 33%,
+                    hsl(160, 55%, 22%) 0,
+                    transparent 59%),
+                radial-gradient(at 82% 65%, hsl(197, 57%, 15%) 0, transparent 55%);
+        }
+
+        .pad0 {
+            padding: 0rem 0em 0rem 0rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="exact-mid">
+        <div class="card pad15" id="inputform" style="min-width:500px; background-color:rgba(255, 255, 255, 0.7)">
+            <h1 class="pixel">飲料訂購單</h1>
+            <hr class="marX20">
+            <div class="col">
+                <div class="cols">
+                    <h2 class="pixel">品項</h2>
+                </div>
+                <div class="cols">
+                    <h2 class="pixel">價格</h2>
+                </div>
+                <div class="cols">
+                    <h2 class="pixel">數量</h2>
+                </div>
+            </div>
+            <div class="col">
+                <div class="cols" style="align-items: center">
+                    <h2>奶茶</h2>
+                    <h2>炸雞</h2>
+                    <h2>薯條</h2>
+                </div>
+                <div class="cols" style="align-items: center">
+                    <h2 class="red">$30</h2>
+                    <h2 class="red">$35</h2>
+                    <h2 class="red">$40</h2>
+                </div>
+                <div class="cols">
+                    <div class="nes-select "
+                        style="display: flex;max-height:27px;margin-bottom:15px; max-width:75px; margin-left:30px;">
+                        <select required id="milktea" style="padding:0;">
+                            <option value="0" selected>0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>
+                    </div>
+                    <div class="nes-select"
+                        style="display: flex;max-height:27px;margin-bottom:15px; max-width:75px; margin-left:30px;">
+                        <select required id="friedChicken" style="padding:0;">
+                            <option value="0" selected>0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>
+                    </div>
+                    <div class="nes-select" style="display: flex;max-height:27px; max-width:75px; margin-left:30px;">
+                        <select required id="FrenchFries" style="padding:0;">
+                            <option value="0" selected>0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <label>
+                    <input type="radio" class="nes-radio" name="member" value="1" checked />
+                    <span>Member</span>
+                </label>
+                <label>
+                    <input type="radio" class="nes-radio" value="0" name="member" />
+                    <span>Not Member</span>
+                </label>
+            </div>
+            <button type="button" class="nes-btn is-primary" onclick="Calculate()">Calculate!</button>
+        </div>
+        <div class="nes-container is-dark with-title" id="result-con" style="display:none">
+            <p class="title">Dear Customer</p>
+            <p id="result">你點了</p>
+            <p id="milktear"></p>
+            <p id="friedChickenr"></p>
+            <p id="FrenchFriesr"></p>
+            <p id="member"></p>
+            <p id="total"></p>
+            <button type="button" class="nes-btn is-success" onclick="refresh()">ReDo</button>
+        </div>
+    </div>
+    <script>
+        function Calculate() {
+            document.getElementById("result-con").style.display = "block";
+            var milktea = parseInt(document.getElementById("milktea").value);
+            var friedChicken = parseInt(document.getElementById("friedChicken").value);
+            var FrenchFries = parseInt(document.getElementById("FrenchFries").value);
+            var member = document.querySelector('input[name="member"]:checked').value;
+            var result = (milktea * 30) + (friedChicken * 35) + (FrenchFries * 40);
+            console.log(member)
+            if (member == "1") {
+                document.getElementById("member").innerText = "會員八折:" + result + "x0.8=" + result * 0.8;
+                result = result * 0.8;
+            }
+            document.getElementById("milktear").innerText = "奶茶:" + milktea + "x30=" + (milktea * 30);
+            document.getElementById("friedChickenr").innerText = "炸雞:" + friedChicken + "x35=" + friedChicken * 35;
+            document.getElementById("FrenchFriesr").innerText = "薯條:" + FrenchFries + "x40=" + FrenchFries * 40;
+            document.getElementById("total").innerHTML = "總共" + (milktea + friedChicken + FrenchFries) + "份 總計:" + result + "元";
+            document.getElementById("inputform").style.display = "none";
+        }
+        function refresh() {
+            //refresh page
+            location.reload();
+        }
+    </script>
+</body>
+
+</html>

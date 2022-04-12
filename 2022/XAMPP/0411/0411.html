@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avearage</title>
+    <link rel="stylesheet" href="https://sususu.su/css/cheat.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+        body {
+            height: 100vh;
+            background-color: #068856;
+            background-image: url("https://images.unsplash.com/photo-1519681393784-d120267933ba?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1124&q=100");
+            background-size: cover;
+        }
+
+        .card {
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            background-color: rgba(17, 25, 40, 0.75);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.125);
+            max-width: 625px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Inter', sans-serif;
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+
+        hr {
+            height: 3px;
+            background-color: rgba(255, 255, 255, 0.25);
+            border: none;
+        }
+
+        .main {
+            transition: 0.5s;
+        }
+
+        /*if width<525 */
+        @media screen and (max-width: 525px) {
+            .mbscale {
+                width: 50px;
+            }
+        }
+    </style>
+    <script>
+        let ChineseArray = [];
+        let EnglishArray = [];
+        let MathArray = [];
+        let ComputerArray = [];
+        function show() {
+            document.getElementById("result").style.display = "block";
+            //get ChineseArray Sum
+            document.getElementById("WaitingForInput").style.display = "block";
+            //Chinese
+            let ChineseSum = 0;
+            for (let i = 0; i < ChineseArray.length; i++) {
+                ChineseSum += Number(ChineseArray[i]);
+            }
+            let ChineseAverage = ChineseSum / ChineseArray.length;
+            //English
+            let EnglishSum = 0;
+            for (let i = 0; i < EnglishArray.length; i++) {
+                EnglishSum += Number(EnglishArray[i]);
+            }
+            let EnglishAverage = EnglishSum / EnglishArray.length;
+            //math
+            let MathSum = 0;
+            for (let i = 0; i < MathArray.length; i++) {
+                MathSum += Number(MathArray[i]);
+            }
+            let MathAverage = MathSum / MathArray.length;
+            //computer
+            let computerSum = 0;
+            for (let i = 0; i < ComputerArray.length; i++) {
+                computerSum += Number(ComputerArray[i]);
+            }
+            let ComputerAverage = computerSum / ComputerArray.length;
+            ComputerAverage = ComputerAverage.toFixed(2);
+            ChineseAverage = ChineseAverage.toFixed(2);
+            EnglishAverage = EnglishAverage.toFixed(2);
+            MathAverage = MathAverage.toFixed(2);
+            MathSum = MathSum.toFixed(2);
+            EnglishSum = EnglishSum.toFixed(2);
+            ChineseSum = ChineseSum.toFixed(2);
+            computerSum = computerSum.toFixed(2);
+            document.getElementById("SumChinese").innerHTML = ChineseSum;
+            document.getElementById("AverageChinese").innerHTML = ChineseAverage;
+            document.getElementById("SumEnglish").innerHTML = EnglishSum;
+            document.getElementById("AverageEnglish").innerHTML = EnglishAverage;
+            document.getElementById("SumMath").innerHTML = MathSum;
+            document.getElementById("AverageMath").innerHTML = MathAverage;
+            document.getElementById("SumComputer").innerHTML = computerSum;
+            document.getElementById("AverageComputer").innerHTML = ComputerAverage;
+            let table = document.getElementById("table-result");
+            for (let i = 0; i < ChineseArray.length; i++) {
+                sample2 = "";
+                console.log("Chinese Array: " + ChineseArray[i] + "English Array: " + EnglishArray[i] + "Math Array: " + MathArray[i] + "Computer Array: " + ComputerArray[i]);
+                let EachStudentAverage = parseInt(ChineseArray[i]) + parseInt(EnglishArray[i]) + parseInt(MathArray[i]) + parseInt(ComputerArray[i]);
+                console.log("B4 Average" + EachStudentAverage);
+                EachStudentAverage = EachStudentAverage / 4;
+                console.log(EachStudentAverage);
+                let newRow = table.insertRow();
+                let cellName = newRow.insertCell();
+                let cellScore = newRow.insertCell();
+                cellName.innerHTML = "第" + (i + 1) + "位";
+                cellScore.innerHTML = EachStudentAverage.toFixed(2);
+            }
+            result.innerHTML += sample2;
+            document.getElementById("num").focus();
+        }
+        function hide() {
+            document.getElementById("result").style.display = "none";
+        }
+        const Howmanyinput = document.getElementById("num");
+        var Howmany = 0;
+        let count = 1;
+        function HowManyStudents() {
+            let count = 1;
+            document.getElementById("Count").innerText = "第" + count + "位";
+            hide();
+            const Howmanyinput = document.getElementById("num");
+            if (document.getElementById("num").value == null) {
+                console.log("You need to type some number. Bruh");
+            }
+            else {
+                console.log("總個的學生人數為" + Howmanyinput.value);
+                document.getElementById("WaitingForInput").style.display = "none";
+                document.getElementById("Count").innerText = "第" + count + "位";
+
+            }
+        }
+        function TypeInScore() {
+            let Howmany = document.getElementById("num").value;
+            let ScoreInput = document.getElementById("ScoreInput").value;
+            let English = document.getElementById("ScoreInput-English").value;
+            let Math = document.getElementById("ScoreInput-math").value;
+            let computer = document.getElementById("ScoreInput-computer").value;
+            console.log(count + " " + Howmany);
+            if (count < Howmany) {
+                console.log("count為" + count);
+                if (ScoreInput == null) {
+                    console.log("You need to type some number. Bruh");
+                }
+                else if (ScoreInput > 0 && ScoreInput <= 100 && English >= 0 && English <= 100 && Math >= 0 && Math <= 100 && computer >= 0 && computer <= 100) {
+                    let Score = ScoreInput;
+                    let EnglishScore = English;
+                    let MathScore = Math;
+                    let ComputerScore = computer;
+                    ChineseArray.push(Score);
+                    EnglishArray.push(EnglishScore);
+                    MathArray.push(MathScore);
+                    ComputerArray.push(ComputerScore);
+                    console.log(ChineseArray, EnglishArray, MathArray, ComputerArray);
+                    document.getElementById("WaitingForInput").style.display = "none";
+                    count = count + 1;
+                    document.getElementById("ScoreInput").value = null;
+                    document.getElementById("ScoreInput-English").value = null;
+                    document.getElementById("ScoreInput-math").value = null;
+                    document.getElementById("ScoreInput-computer").value = null;
+                    if (count != Howmany + 1) {
+                        document.getElementById("Count").innerText = "第" + count + "位";
+                    }
+                }
+                else {
+                    console.log(ScoreInput + " is not in the range of 0~100");
+                }
+            }
+            else {
+                ChineseArray.push(ScoreInput);
+                EnglishArray.push(English);
+                MathArray.push(Math);
+                ComputerArray.push(computer);
+                console.log(ChineseArray, EnglishArray, MathArray, ComputerArray);
+                document.getElementById("ScoreInput").value = null;
+                document.getElementById("ScoreInput-English").value = null;
+                document.getElementById("ScoreInput-math").value = null;
+                document.getElementById("ScoreInput-computer").value = null;
+                show();
+                count = 1;
+                ChineseArray = [];
+                EnglishArray = [];
+                MathArray = [];
+                ComputerArray = [];
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <a id="count" style="display:none;"></a>
+    <div class="card pad15 main" style="position:relative; overflow:hidden;">
+        <h2 class="white marX10" style="text-align: left; font-size:regular;">全班平均</h2>
+        <hr class="marX5">
+        <div style="display:flex">
+            <div class="marX5 bg-square" style="flex:4; position:relative;z-index:2;">
+                <h3 style="text-align:left;" class="marX15">How many students?</h3>
+                <hr class="marX15" style=" margin-top:-10px;background-color:rgba(12, 12, 12, 0.25);">
+                <div class="marY10"
+                    style="display:flex; margin-bottom:0px; position:absolute; bottom:10px; width:100%;">
+                    <input class="tinput marX5 marY5 mbscale" type="number" id="num" placeholder="Number" autofocus
+                        style="flex:2;font-size:14pt;max-width:60%;">
+                    <div class="right padX10" style="flex:1;cursor: pointer;z-index:6;">
+                        <a class="btn-text pad10" id="hms" onclick="HowManyStudents()">👌</a>
+                    </div>
+                </div>
+            </div>
+            <div style="flex:5; " class="marX5 bg-square ofhideX ofhideY">
+                <h2 id="Count" style="text-align:left;" class="marX15">.</h2>
+                <hr class="marX15" style=" margin-top:-10px;background-color:rgba(12, 12, 12, 0.25);">
+                <div style="display:flex;" class="marY10">
+                    <div style="flex:1">
+                        <h1>國</h1>
+                        <input class="tinput marX5 marY5 " type="number" id="ScoreInput" placeholder="Score"
+                            style="flex:2;font-size:14pt;max-width:50px;">
+                    </div>
+                    <div style="flex:1">
+                        <h1>英</h1>
+                        <input class="tinput marX5 marY5 " type="number" id="ScoreInput-English" placeholder="Score"
+                            style="flex:2;font-size:14pt;max-width:50px;">
+                    </div>
+                    <div style="flex:1">
+                        <h1>數</h1>
+                        <input class="tinput marX5 marY5 " type="number" id="ScoreInput-math" placeholder="Score"
+                            style="flex:2;font-size:14pt;max-width:50px;">
+                    </div>
+                    <div style="flex:1">
+                        <h1>計</h1>
+                        <input class="tinput marX5 marY5 " type="number" id="ScoreInput-computer" placeholder="Score"
+                            style="flex:2;font-size:14pt;max-width:50px;">
+                    </div>
+                </div>
+                <div class="right padX10" style="flex:1;cursor: pointer; display:none;">
+                    <a class="btn-text pad10 " style="background-color:rgb(77, 78, 78);" id="tis"
+                        onclick="TypeInScore()">👌</a>
+                </div>
+                <div class="bg-square" id="WaitingForInput"
+                    style="z-index:4;width:100%;height:100%; position:absolute;top:50%;left:50%;transform: translate(-50%, -50%);opacity:0.9;display:none;">
+                    <h1>等待輸入中..</h1>
+                </div>
+            </div>
+        </div>
+        <div class="bg-square marX5" id="result" style="margin-bottom:-10px; display:none;">
+            <h1 id="Answer">平均</h1>
+
+            <div class="display:flex;max-width:80%;">
+                <div class="marX10" style="flex:2;">
+                    <table Border="1" id="EverySubjectAverage" class="mid"
+                        style="flex:2;font-size:12pt; background-color:white; font-weight:bold;float:left;">
+                        <tr>
+                            <td>國文</td>
+                            <td>總和</td>
+                            <td id="SumChinese"></td>
+                            <td>平均</td>
+                            <td id="AverageChinese"></td>
+                        </tr>
+                        <tr>
+                            <td>英文</td>
+                            <td>總和</td>
+                            <td id="SumEnglish"></td>
+                            <td>平均</td>
+                            <td id="AverageEnglish"></td>
+                        </tr>
+                        <tr>
+                            <td>數學</td>
+                            <td>總和</td>
+                            <td id="SumMath"></td>
+                            <td>平均</td>
+                            <td id="AverageMath"></td>
+                        </tr>
+                        <tr>
+                            <td>計概</td>
+                            <td>總和</td>
+                            <td id="SumComputer"></td>
+                            <td>平均</td>
+                            <td id="AverageComputer"></td>
+                        </tr>
+                    </table>
+                </div>
+                <div style="flex:1;" class="marY20">
+                    <table Border="1" cellspacing="" id="table-result" class="mid"
+                        style="font-size:12pt; background-color:white; font-weight:bold;">
+                        <tr>
+                            <td>
+                                編號
+                            </td>
+                            <td>
+                                平均
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+<script>
+    var el = document.getElementById('num');
+    el.addEventListener('keyup', function (e) {
+        if (e.keyCode == 13) {
+            document.getElementById("hms").click();
+            document.getElementById("ScoreInput").focus();
+        }
+    });
+    var rl2 = document.getElementById('ScoreInput-computer')
+    rl2.addEventListener('keyup', function (e) {
+        if (e.keyCode == 13) {
+            document.getElementById("tis").click();
+            document.getElementById("ScoreInput").focus();
+        }
+    });
+</script>
+
+</html>

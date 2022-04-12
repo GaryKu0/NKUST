@@ -1,0 +1,46 @@
+.mid{
+    margin:0 auto;
+    text-align:center;
+}
+.card{
+    border-radius:8px;
+    background-color: rgb(236, 236, 236);
+    opacity: 0.9;
+    font-weight: 400;
+    text-align: center;
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(209, 213, 219, 0.3);
+}
+.yellow{
+    color:yellow;
+}
+.red{
+    color:red;
+}
+.black{
+    color:black;
+}
+.green{
+    color:green;
+}
+.white{
+    color:white;
+}
+.blue{
+    color:blue;
+}
+.tinput{
+    background: transparent;
+    border: none;
+    background: none;
+    outline: none;
+    color: black;
+    margin: 0 auto;
+    padding-left: 10px;
+    font-weight: bold;
+}
+.LargeText{
+    font-size:6vw;
+}
