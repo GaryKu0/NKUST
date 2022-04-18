@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!--Import Card.css-->
+    <link rel="stylesheet" href="Card.css" type="text/css">
+    <style>
+        .main {
+            /*made it absolute center*/
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 25px;
+            font-size: 6vw;
+            font-weight: bold;
+            font-family: system-ui;
+            max-width: 65%;
+        }
+
+        .input-group-type {
+            background: transparent;
+            width: 8vw;
+            border: none;
+            background: none;
+            outline: none;
+            color: black;
+            margin: 0 auto;
+            padding-left: 10px;
+            font-size: 6vw;
+            font-weight: bold;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: transparent;
+            min-width: 20px;
+            z-index: 5;
+            border-radius: 10px;
+            transition-duration: 0.3s;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, 60%);
+            line-height:10vh;
+        }
+
+        .dropdown:hover {
+            color: rgb(85, 134, 85);
+            transition-duration: 0.3s;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        /*when .dropdown hover made .dropdown-content visble*/
+        .dropdown:hover>.dropdown-content {
+            display: block;
+        }
+        .items{
+            font-size:6vw;
+            padding-left:10px;
+            padding-right:10px;
+            display: inline-block;
+        }
+    </style>
+    <script>
+        function cal(option){
+            if (option==1){
+                c=1;
+                document.getElementById("dropdown").innerText="−"
+            }
+            else if (option==2){
+                c=2;
+                document.getElementById("dropdown").innerText="×"
+            }
+            else if (option==3){
+                c=3;
+                document.getElementById("dropdown").innerText="÷"
+            }
+                
+        }
+        let c;
+        window.onload = function () {
+            document.getElementById("body").addEventListener("keyup", function (event) {
+                event.preventDefault();
+                if (event.keyCode === 13) {
+                    document.getElementById("equal").click();
+                }
+            });
+            document.getElementById("dropdown").addEventListener("click", function (event) {
+                event.preventDefault();
+                console.log("change!")
+                document.getElementById("dropdown-content").style.display = "block";
+            });
+            document.getElementById("dropdown-content").addEventListener("click", function (event) {
+                event.preventDefault();
+                document.getElementById("dropdown-content").style.display = "none";
+            });
+            const equal = document.getElementById("equal");
+            equal.onclick = function () {
+                let a = document.getElementById("a")
+                let b = document.getElementById("b")
+                console.log(c);
+                if (c==null)
+                    document.getElementById("answer").innerText = parseInt(a.value) + parseInt(b.value);
+                else if (c==1)
+                    document.getElementById("answer").innerText = parseInt(a.value) - parseInt(b.value);
+                else if (c==2)
+                    document.getElementById("answer").innerText = parseInt(a.value) * parseInt(b.value);
+                else if (c==3)
+                    document.getElementById("answer").innerText = parseInt(a.value) / parseInt(b.value);
+                c=null;
+            }
+        }
+    </script>
+</head>
+
+<body id="body">
+    <div class="card main">
+        <!--Create an number input-->
+        <input class="input-group-type" type="number" name="number" id="a" placeholder="" autofocus>
+        <a class="dropdown" id="dropdown" data-togge>+</a>
+        <input class="input-group-type" type="number" name="number" id="b" placeholder="">
+        <a id="equal">=</a>
+        <a id="answer"></a>
+    </div>
+    <div id="dropdown-content" class="dropdown-content">
+        <div class="items" onclick="cal(1)">−</div>
+        <div  class="items" onclick="cal(2)">×</div>
+        <div style="margin-bottom:10px;" onclick="cal(3)" class="items">÷</div>
+    </div>
+</body>
+
+</html>

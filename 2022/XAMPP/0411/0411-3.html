@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="https://sususu.su/css/cheat.css" type="text/css">
+    <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
+    <title>POS</title>
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧙‍♂️</text></svg>">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+        @font-face {
+            font-family: 'zpix';
+            src: url('zpix.ttf');
+        }
+
+        .pixel {
+            font-family: 'Press Start 2P', 'zpix', cursive;
+        }
+
+        body {
+            height: 100vh;
+            background-color: #3c3d3d;
+            background-image: radial-gradient(at 47% 33%,
+                    hsl(160, 55%, 22%) 0,
+                    transparent 59%),
+                radial-gradient(at 82% 65%, hsl(197, 57%, 15%) 0, transparent 55%);
+        }
+
+        .pad0 {
+            padding: 0rem 0em 0rem 0rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="exact-mid">
+        <div class="card pad15" id="inputform" style="min-width:500px; background-color:rgba(255, 255, 255, 0.7)">
+            <h1 class="pixel">BMI Calculator</h1>
+            <hr class="marX20">
+            <div class="col marY10">
+                <div class="cols">
+                    <h2 class="pixel">Weight(kg)</h2>
+                    <div class="nes-field marX10">
+                        <label for="Weight">Your name</label>
+                        <input type="number" id="Weight" class="nes-input">
+                    </div>
+                </div>
+                <div class="cols">
+                    <h2 class="pixel">Height(m)</h2>
+                    <div class="nes-field marX10">
+                        <label for="Height">Your Height</label>
+                        <input type="number" id="Height" class="nes-input">
+                    </div>
+                </div>
+            </div>
+            <button type="button" class="nes-btn is-primary" onclick="Calculate()">Calculate!</button>
+        </div>
+        <div class="nes-container is-dark with-title" id="result-con" style="display:none">
+            <p class="title">YOUR BMI IS</p>
+            <h2 id="result">你點了</h2>
+            <button type="button" class="nes-btn is-success" onclick="refresh()">ReDo</button>
+        </div>
+    </div>
+    <script>
+        function Calculate() {
+            var Bmiheight = document.getElementById("Height").value;
+            var Bmiwidght = document.getElementById("Weight").value;
+            var Bmi = getBMI(Bmiheight, Bmiwidght);
+            var result = document.getElementById("result");
+            result.innerHTML = Bmi;
+            document.getElementById("result-con").style.display = "block";
+            document.getElementById("inputform").style.display = "none";
+        }
+        function getBMI(m, kg) {
+            var BMI = kg / (m * m);
+            BMI = BMI.toFixed(2);
+            return BMI;
+        }
+        function refresh() {
+            //refresh page
+            location.reload();
+        }
+    </script>
+</body>
+
+</html>
