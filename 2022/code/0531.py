@@ -1,6 +1,6 @@
 import pandas as pd
 import json
-Df=open('C:\\Users\\admin\\OneDrive - sudevtw\\桌面\\VsCode\\NKUST\\2022\\code\\uu.json','r',encoding='utf-8')
+f=open('C:\\Users\\admin\\OneDrive - sudevtw\\桌面\\VsCode\\NKUST\\2022\\code\\uu.json','r',encoding='utf-8')
 data=json.load(f)
 f.close()
 tmp=pd.DataFrame(data)

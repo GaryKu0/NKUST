@@ -1,0 +1,356 @@
+,,job_title,salary_in_usd,company_location
+179,179,Data Scientist,5679,US
+113,113,AI Scientist,12000,US
+96,96,AI Scientist,12000,US
+208,208,Data Engineer,20000,US
+579,579,Data Engineer,25000,US
+182,182,Data Engineer,26005,US
+102,102,BI Data Analyst,36259,US
+455,455,NLP Engineer,37236,US
+132,132,Applied Machine Learning Scientist,38400,US
+40,40,Data Scientist,45760,US
+515,515,Data Scientist,48000,US
+122,122,Data Analyst,50000,US
+471,471,Data Analyst,50000,US
+203,203,Research Scientist,50000,US
+565,565,Data Engineer,54000,US
+198,198,Data Science Manager,54094,US
+168,168,BI Data Analyst,55000,US
+19,19,Lead Data Engineer,56000,US
+406,406,Data Analyst,58000,US
+276,276,Data Scientist,58000,US
+367,367,Data Analyst,58000,US
+54,54,Computer Vision Engineer,60000,US
+172,172,Data Analyst,60000,US
+589,589,Data Analyst,60000,US
+103,103,Data Analyst,62000,US
+418,418,Data Engineer,63900,US
+512,512,Data Engineer,65000,US
+32,32,Data Scientist,68428,US
+573,573,Data Analyst,69000,US
+31,31,Big Data Engineer,70000,US
+98,98,Computer Vision Software Engineer,70000,US
+557,557,Data Engineer,70500,US
+5,5,Data Analyst,72000,US
+270,270,Data Engineer,72500,US
+104,104,Data Scientist,73000,US
+506,506,Applied Machine Learning Scientist,75000,US
+100,100,Data Analyst,75000,US
+526,526,Data Scientist,78000,US
+139,139,Data Scientist,80000,US
+450,450,Data Engineer,80000,US
+568,568,Data Analyst,80000,US
+241,241,Data Analyst,80000,US
+424,424,Data Scientist,80000,US
+89,89,Data Analyst,80000,US
+166,166,Data Engineer,80000,US
+79,79,Data Analyst,80000,US
+178,178,Machine Learning Engineer,81000,US
+541,541,Data Analyst,81666,US
+403,403,Data Analyst,81666,US
+143,143,Data Scientist,82500,US
+425,425,Data Engineer,82900,US
+297,297,Data Analyst,84900,US
+14,14,Data Analyst,85000,US
+13,13,Lead Data Analyst,87000,US
+118,118,Data Analyst,90000,US
+293,293,Data Scientist,90000,US
+147,147,Data Engineer,90000,US
+199,199,Data Science Consultant,90000,US
+135,135,Data Analyst,90000,US
+251,251,Data Scientist,90000,US
+331,331,Data Analyst,90320,US
+393,393,Data Analyst,90320,US
+529,529,Data Analyst,90320,US
+318,318,Data Analyst,90320,US
+333,333,Data Analyst,90320,US
+51,51,Data Analyst,91000,US
+254,254,Data Analyst,93000,US
+266,266,Data Engineer,93150,US
+383,383,Data Analyst,93700,US
+341,341,Data Engineer,93700,US
+347,347,Data Scientist,95550,US
+99,99,Computer Vision Software Engineer,95746,US
+23,23,BI Data Analyst,98000,US
+305,305,Data Analyst,99000,US
+588,588,Data Analyst,99000,US
+548,548,Data Analyst,99050,US
+543,543,Data Engineer,99100,US
+299,299,Data Scientist,99360,US
+528,528,Data Analyst,100000,US
+275,275,Data Scientist,100000,US
+28,28,Business Data Analyst,100000,US
+461,461,Financial Data Analyst,100000,US
+134,134,Data Scientist,100000,US
+494,494,Data Scientist,100000,US
+488,488,Data Scientist,100000,US
+578,578,Data Engineer,100000,US
+144,144,Data Engineer,100000,US
+76,76,BI Data Analyst,100000,US
+468,468,Data Engineer,100000,US
+572,572,Data Analyst,100000,US
+426,426,Data Engineer,100800,US
+381,381,Data Engineer,101570,US
+539,539,Data Scientist,102100,US
+296,296,Data Analyst,102100,US
+36,36,Data Science Consultant,103000,US
+467,467,Data Scientist,104890,US
+283,283,Staff Data Scientist,105000,US
+68,68,Data Scientist,105000,US
+48,48,Data Scientist,105000,US
+584,584,Data Analyst,105000,US
+456,456,Data Engineer,105000,US
+395,395,Data Analytics Manager,105400,US
+43,43,Data Engineer,106000,US
+307,307,Data Analyst,106260,US
+581,581,Data Analyst,106260,US
+346,346,Data Engineer,108800,US
+287,287,Data Scientist,109000,US
+339,339,Data Analyst,109280,US
+595,595,Data Analytics Manager,109280,US
+87,87,Data Analytics Engineer,110000,US
+327,327,Data Analyst,110000,US
+235,235,Head of Data Science,110000,US
+60,60,Data Engineer,110000,US
+242,242,Data Engineer,110000,US
+546,546,Data Engineer,110500,US
+585,585,Data Analyst,110925,US
+267,267,Data Engineer,111775,US
+280,280,Data Engineer,112000,US
+420,420,Machine Learning Scientist,112300,US
+330,330,Data Analyst,112900,US
+332,332,Data Analyst,112900,US
+392,392,Data Analyst,112900,US
+536,536,Data Analyst,112900,US
+348,348,Data Engineer,113000,US
+107,107,Data Engineer,115000,US
+545,545,Data Engineer,115000,US
+250,250,Data Scientist,115000,US
+504,504,Data Engineer,115000,US
+329,329,Data Analyst,115500,US
+402,402,Data Analyst,115934,US
+540,540,Data Analyst,115934,US
+306,306,Data Analyst,116000,US
+564,564,Data Analyst,116150,US
+57,57,Data Scientist,118000,US
+508,508,Research Scientist,120000,US
+58,58,Data Scientist,120000,US
+324,324,Data Scientist,120000,US
+485,485,Machine Learning Engineer,120000,US
+479,479,Data Scientist,120000,US
+465,465,Data Engineer,120000,US
+158,158,Data Analytics Manager,120000,US
+209,209,Data Analytics Manager,120000,US
+126,126,Machine Learning Scientist,120000,US
+453,453,Machine Learning Engineer,120000,US
+391,391,AI Scientist,120000,US
+317,317,Data Scientist,120160,US
+291,291,Data Analyst,120600,US
+303,303,Data Scientist,123000,US
+370,370,Data Scientist,123000,US
+353,353,Data Scientist,123000,US
+325,325,Data Analyst,124190,US
+454,454,Computer Vision Engineer,125000,US
+159,159,Machine Learning Engineer,125000,US
+603,603,Data Engineer,126000,US
+580,580,Data Analyst,126500,US
+308,308,Data Analyst,126500,US
+340,340,Data Engineer,128875,US
+382,382,Data Analyst,128875,US
+604,604,Data Analyst,129000,US
+260,260,Data Scientist,130000,US
+326,326,Data Analyst,130000,US
+599,599,Data Scientist,130000,US
+544,544,Data Engineer,130000,US
+547,547,Data Engineer,130000,US
+292,292,Data Scientist,130000,US
+61,61,Data Engineer,130800,US
+376,376,Data Analyst,132000,US
+335,335,Data Engineer,132320,US
+320,320,Data Engineer,132320,US
+385,385,Data Engineer,132320,US
+524,524,Data Scientist,135000,US
+368,368,Analytics Engineer,135000,US
+8,8,Business Data Analyst,135000,US
+289,289,Data Engineer,135000,US
+470,470,Data Analyst,135000,US
+349,349,Data Analyst,135000,US
+140,140,Data Analyst,135000,US
+228,228,Data Scientist,135000,US
+527,527,Data Analyst,135000,US
+366,366,Data Engineer,136000,US
+338,338,Data Analyst,136600,US
+298,298,Data Scientist,136620,US
+380,380,Data Engineer,136994,US
+351,351,Data Science Manager,137141,US
+39,39,Machine Learning Engineer,138000,US
+59,59,Data Scientist,138350,US
+365,365,Data Scientist,138600,US
+473,473,Data Scientist,140000,US
+569,569,Data Scientist,140000,US
+219,219,Data Analytics Manager,140000,US
+587,587,Data Scientist,140000,US
+575,575,Data Scientist,140000,US
+81,81,Data Engineer,140000,US
+469,469,Data Scientist,140000,US
+571,571,Data Scientist,140000,US
+563,563,Data Engineer,140250,US
+428,428,Data Scientist,140400,US
+559,559,Data Scientist,140400,US
+551,551,Data Scientist,140400,US
+538,538,Data Scientist,141300,US
+553,553,Data Scientist,144000,US
+466,466,Research Scientist,144000,US
+154,154,Data Science Manager,144000,US
+591,591,Data Architect,144854,US
+556,556,Data Engineer,145000,US
+394,394,Data Analytics Manager,145000,US
+302,302,Data Scientist,146000,US
+195,195,Data Scientist,147000,US
+379,379,Data Architect,147800,US
+4,4,Machine Learning Engineer,150000,US
+356,356,Data Scientist,150000,US
+605,605,Data Analyst,150000,US
+169,169,Data Architect,150000,US
+151,151,Data Scientist,150000,US
+593,593,Data Scientist,150000,US
+142,142,Data Engineering Manager,150000,US
+73,73,BI Data Analyst,150000,US
+108,108,Data Engineer,150000,US
+295,295,Data Engineer,150000,US
+101,101,Data Engineer,150000,US
+577,577,Data Analyst,150075,US
+594,594,Data Analytics Manager,150260,US
+125,125,Principal Data Scientist,151000,US
+516,516,Data Science Manager,152500,US
+148,148,Data Engineering Manager,153000,US
+495,495,Machine Learning Scientist,153000,US
+602,602,Data Engineer,154000,US
+401,401,Data Engineer,154600,US
+447,447,Data Engineer,154600,US
+537,537,Data Engineer,155000,US
+388,388,Data Engineer,155000,US
+290,290,Data Analyst,155000,US
+345,345,Data Engineer,156600,US
+509,509,Applied Data Scientist,157000,US
+399,399,Data Scientist,158200,US
+422,422,Data Science Manager,159000,US
+204,204,Data Scientist,160000,US
+364,364,Data Engineer,160000,US
+549,549,Data Engineer,160000,US
+419,419,Machine Learning Scientist,160000,US
+555,555,Data Engineer,160000,US
+598,598,Data Scientist,160000,US
+265,265,Lead Data Engineer,160000,US
+149,149,Cloud Data Engineer,160000,US
+322,322,Data Engineer,160080,US
+583,583,Data Engineer,160080,US
+350,350,Data Science Manager,161342,US
+387,387,Data Analyst,164000,US
+439,439,Machine Learning Engineer,164996,US
+372,372,Machine Learning Engineer,164996,US
+165,165,Data Specialist,165000,US
+243,243,Data Scientist,165000,US
+497,497,Data Scientist,165000,US
+207,207,Data Engineer,165000,US
+315,315,Data Scientist,165220,US
+334,334,Data Engineer,165400,US
+377,377,Data Engineer,165400,US
+336,336,Data Analyst,167000,US
+352,352,Data Scientist,167000,US
+343,343,Head of Data Science,167875,US
+88,88,Lead Data Analyst,170000,US
+369,369,Data Scientist,170000,US
+328,328,Data Analyst,170000,US
+294,294,Data Engineer,170000,US
+597,597,Data Analyst,170000,US
+170,170,Data Architect,170000,US
+566,566,Data Analyst,170000,US
+249,249,Principal Data Analyst,170000,US
+193,193,Data Science Manager,174000,US
+175,175,Data Engineering Manager,174000,US
+344,344,Analytics Engineer,175000,US
+404,404,Data Engineer,175000,US
+562,562,Data Engineer,175100,US
+552,552,Data Scientist,176000,US
+525,525,Applied Data Scientist,177000,US
+234,234,Data Architect,180000,US
+323,323,Data Scientist,180000,US
+409,409,Data Scientist,180000,US
+448,448,Data Engineer,180000,US
+423,423,Data Scientist,180000,US
+319,319,Data Engineer,181940,US
+407,407,Data Engineer,183600,US
+561,561,Analytics Engineer,184700,US
+258,258,Machine Learning Engineer,185000,US
+215,215,Principal Data Engineer,185000,US
+476,476,Data Scientist,185100,US
+47,47,Data Engineer,188000,US
+438,438,Machine Learning Engineer,189650,US
+371,371,Machine Learning Engineer,189650,US
+6,6,Lead Data Scientist,190000,US
+67,67,Data Science Manager,190200,US
+590,590,Data Architect,192564,US
+533,533,Machine Learning Engineer,192600,US
+201,201,Machine Learning Infrastructure Engineer,195000,US
+232,232,Director of Data Engineering,200000,US
+233,233,Data Analyst,200000,US
+206,206,Machine Learning Engineer,200000,US
+121,121,Principal Data Engineer,200000,US
+119,119,Data Engineer,200000,US
+256,256,Data Engineer,200000,US
+606,606,AI Scientist,200000,US
+478,478,Data Scientist,200000,US
+490,490,Head of Data,200000,US
+310,310,Data Engineer,200000,US
+554,554,Data Engineer,200100,US
+550,550,Data Scientist,205300,US
+560,560,Analytics Engineer,205300,US
+558,558,Data Scientist,205300,US
+542,542,Data Engineer,206699,US
+378,378,Data Architect,208775,US
+446,446,Data Engineer,209100,US
+400,400,Data Engineer,209100,US
+576,576,Data Scientist,210000,US
+596,596,Data Scientist,210000,US
+574,574,Data Scientist,210000,US
+484,484,Data Engineer,210000,US
+570,570,Data Scientist,210000,US
+357,357,Data Scientist,211500,US
+535,535,Data Architect,213120,US
+532,532,Machine Learning Engineer,214000,US
+444,444,Data Scientist,215300,US
+398,398,Data Scientist,215300,US
+483,483,Data Engineer,216000,US
+138,138,Principal Data Scientist,220000,US
+477,477,Machine Learning Engineer,220000,US
+472,472,Data Scientist,220000,US
+321,321,Data Engineer,220110,US
+582,582,Data Engineer,220110,US
+342,342,Head of Data Science,224000,US
+115,115,Machine Learning Scientist,225000,US
+592,592,Data Scientist,230000,US
+486,486,Data Scientist,230000,US
+173,173,Principal Data Scientist,235000,US
+74,74,Head of Data,235000,US
+141,141,Data Science Manager,240000,US
+421,421,Data Science Manager,241000,US
+309,309,Data Engineer,242000,US
+337,337,Data Engineer,243900,US
+37,37,Machine Learning Engineer,250000,US
+167,167,Director of Data Science,250000,US
+231,231,ML Engineer,256000,US
+416,416,Data Scientist,260000,US
+534,534,Data Architect,266400,US
+78,78,ML Engineer,270000,US
+93,93,Lead Data Engineer,276000,US
+482,482,Data Engineer,324000,US
+25,25,Director of Data Science,325000,US
+519,519,Applied Data Scientist,380000,US
+523,523,Data Analytics Lead,405000,US
+63,63,Data Scientist,412000,US
+225,225,Principal Data Scientist,416000,US
+157,157,Applied Machine Learning Scientist,423000,US
+97,97,Financial Data Analyst,450000,US
+33,33,Research Scientist,450000,US
+252,252,Principal Data Engineer,600000,US
